@@ -1,7 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route} from 'react-router-dom';
+
+import HomePage from './components/HomePage';
+import AboutPage from './components/AboutPage';
+import HistoryPage from './components/HistoryPage';
+
 function App() {
-  return <div className="App"></div>
+  return (
+    <Router>
+      <Route exact path="/" component={HomePage} />
+      <Route path="/about" component={AboutPage} />
+      <Route path="/contact" component={HistoryPage} />
+    </Router>
+  );
 }
+
 export default App;

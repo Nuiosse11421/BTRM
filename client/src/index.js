@@ -1,17 +1,22 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import Form from './components/form';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+// Home component with a button to navigate to the form page
+const Home = () => (
+  <div>
+    <h1>Welcome to My App</h1>
+    <Link to="/form">Go to Form Page</Link>
+  </div>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// App component with routes
+const App = () => (
+  <Router>
+    <Route path="/form" component={Form} />
+    <Route path="/" component={Home} />
+  </Router>
+);
+
+ReactDOM.render(<App />, document.getElementById('root'));

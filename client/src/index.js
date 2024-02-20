@@ -2,8 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Form from './components/form';
+import App from './App'
 
-// Home component with a button to navigate to the form page
+
 const Home = () => (
   <div>
     <h1>Welcome to My App</h1>
@@ -11,12 +12,11 @@ const Home = () => (
   </div>
 );
 
-// App component with routes
-const App = () => (
+const MainApp = () => (
   <Router>
     <Route path="/form" component={Form} />
-    <Route path="/" component={Home} />
+    <Route exact path="/" component={Home} />
   </Router>
 );
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<MainApp />, document.getElementById('root'));

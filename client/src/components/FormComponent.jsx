@@ -11,7 +11,8 @@ const FormComponent = () => {
       <form action="">
         {/*Section Question 1*/}
         <fieldset name="section1">
-          <p>a. ทดสอบการเขียน</p>
+          <h3>ตอนที่ 1 การมีส่วนร่วมกับทีม</h3>
+          <p>a. ข้าพเจ้าสามารถมองเห็นโอกาศใหม่ๆ และใช้โอกาศนั้นให้เป็นประโยชน์</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -21,7 +22,7 @@ const FormComponent = () => {
             ))}
             <p>Selected value: {value}</p>
           </div>
-          <p>b. ทดสอบการเขียน</p>
+          <p>b. ข้าพเจ้าสามารถทำงานได้ดีกับเพื่อนร่วมงานหลากหลายประเภท</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -31,7 +32,7 @@ const FormComponent = () => {
             ))}
             <p>Selected value: {value}</p>
           </div>
-          <p>c. ทดสอบการเขียน</p>
+          <p>c. ความสามารถในการสร้างแนวคิดใหม่เป็นคุณสมบัติประจำตัวของข้าพเจ้า</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -41,7 +42,7 @@ const FormComponent = () => {
             ))}
             <p>Selected value: {value}</p>
           </div>
-          <p>d. ทดสอบการเขียน</p>
+          <p>d. ข้าพเจ้าสามารถค้นพบและดึงความสามารถของเพื่อนร่วมงานออกมาเพื่อให้งานบรรลุวัตถุประสงค์</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -51,7 +52,7 @@ const FormComponent = () => {
             ))}
             <p>Selected value: {value}</p>
           </div>
-          <p>e. ทดสอบการเขียน</p>
+          <p>e. ข้าพเจ้ามั่นใจว่าข้าพเจ้าสามารถทำงานทุกประเภทให้สำเร็จลุล่วง</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -61,7 +62,7 @@ const FormComponent = () => {
             ))}
             <p>Selected value: {value}</p>
           </div>
-          <p>f. ทดสอบการเขียน</p>
+          <p>f. ความสามารถด้านเทคนิคและประสบการณ์การทำงานเป็นสมบัติล้ำค่าของข้าพเจ้า</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -71,7 +72,7 @@ const FormComponent = () => {
             ))}
             <p>Selected value: {value}</p>
           </div>
-          <p>g. ทดสอบการเขียน</p>
+          <p>g. ข้าพเจ้าพร้อมที่จะแสดงอกกอย่างตรงไปตรงมาเพื่อความถูกต้อง</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -81,7 +82,7 @@ const FormComponent = () => {
             ))}
             <p>Selected value: {value}</p>
           </div>
-          <p>h. ทดสอบการเขียน</p>
+          <p>h. ข้าพเจ้าสามารถบอกได้ว่าแผนงานหรือแนวคิดใดเหมาะสมกับแต่ละสถานการณ์</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -91,7 +92,7 @@ const FormComponent = () => {
             ))}
             <p>Selected value: {value}</p>
           </div>
-          <p>i. ทดสอบการเขียน</p>
+          <p>i. ข้าพเจ้าสามารถใช้เหตุผลที่ปราศจากอคติในการเลือกวิธีปฏิบัติงาน</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -104,7 +105,8 @@ const FormComponent = () => {
         </fieldset>
         {/*Section Question 2*/}
         <fieldset name="section2">
-          <p>a. ทดสอบการเขียน</p>
+          <h3>ตอนที่ 2 ปัญหาที่เกี่ยวกับการทำงานเป็นทีม</h3>
+          <p>a. ข้าพเจ้าต้องการให้การประชุมแต่ละครั้งมีการควบคุมและการจัดการที่ดี</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -114,7 +116,7 @@ const FormComponent = () => {
             ))}
             <p>Selected value: {value}</p>
           </div>
-          <p>b. ทดสอบการเขียน</p>
+          <p>b. ข้าพเจ้าให้โอกาสมากเกินไปกับเพื่อนร่วมงานที่มีความคิดหน้าสนใจแต่แสดงออกอย่างไม่ถูกต้อง</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -124,7 +126,7 @@ const FormComponent = () => {
             ))}
             <p>Selected value: {value}</p>
           </div>
-          <p>c. ทดสอบการเขียน</p>
+          <p>c. ข้าพเจ้าลังเลที่จะมีส่วนร่วมกับงานที่ข้าพเจ้ามีความรู้น้อย</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -134,7 +136,7 @@ const FormComponent = () => {
             ))}
             <p>Selected value: {value}</p>
           </div>
-          <p>d. ทดสอบการเขียน</p>
+          <p>d. ข้าพเจ้ามีแนวโน้มที่จะแสดงออกมาก เมื่อคณะทำงานเริ่มเปิดประเด็นใหม่</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -144,7 +146,7 @@ const FormComponent = () => {
             ))}
             <p>Selected value: {value}</p>
           </div>
-          <p>e. ทดสอบการเขียน</p>
+          <p>e. ทัศนคติส่วนตัวของข้าพเจ้าทำให้ข้าพเจ้ารู้สึกยากลำบากในการเข้าร่วมกลุ่มด้วยความพร้อมและมองโลกในแง่ดี</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -154,7 +156,7 @@ const FormComponent = () => {
             ))}
             <p>Selected value: {value}</p>
           </div>
-          <p>f. ทดสอบการเขียน</p>
+          <p>f. ข้าพเจ้าบางครั้งใช้ความก้าวร้าวและเด็ดขาดในการแก้ไขปัญหาสำคัญ</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -164,7 +166,7 @@ const FormComponent = () => {
             ))}
             <p>Selected value: {value}</p>
           </div>
-          <p>g. ทดสอบการเขียน</p>
+          <p>g. ข้าพเจ้าไม่ชอบแสดงออกว่าเป็นผู้นำ อาจเนื่องจากข้าพเจ้าคิดว่าการทำงานเป็นทีมต้องใช้ความรับผิดชอบมากเกินไป</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -174,7 +176,7 @@ const FormComponent = () => {
             ))}
             <p>Selected value: {value}</p>
           </div>
-          <p>h. ทดสอบการเขียน</p>
+          <p>h. ข้าพเจ้ามีความคิดผุดขึ้นมาเรื่อย ๆ จนทำให้เสียสมาธิกับสิ่งที่กำลังเกิดขึ้นรอบตัว</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -184,7 +186,7 @@ const FormComponent = () => {
             ))}
             <p>Selected value: {value}</p>
           </div>
-          <p>i. ทดสอบการเขียน</p>
+          <p>i. ข้าพเจ้าลังเลที่จะแสดงความคิดเห็นเกี่ยวกับข้อเสนอโครงการและแผนงานที่ยังไม่สมบูรณ์หรือไม่ละเอียดเพียงพอ</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -196,8 +198,9 @@ const FormComponent = () => {
           </div>
         </fieldset>
         {/*Section Question 3*/}
-        <fieldset name="section1">
-          <p>a. ทดสอบการเขียน</p>
+        <fieldset name="section3">
+          <h3>ตอนที่ 3. การทำงานในโครงการที่เกี่ยวกับคนอื่น</h3>
+          <p>a. ข้าพเจ้าสามารถโน้มน้าวคนอื่นได้โดยไม่จำเป็นต้องกดดัน</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -207,7 +210,7 @@ const FormComponent = () => {
             ))}
             <p>Selected value: {value}</p>
           </div>
-          <p>b. ทดสอบการเขียน</p>
+          <p>b. ข้าพเจ้าถนัดในการป้องกันความผิดพลาดจากความเผอเรอที่อาจทำให้งานเสียหาย</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -217,7 +220,7 @@ const FormComponent = () => {
             ))}
             <p>Selected value: {value}</p>
           </div>
-          <p>c. ทดสอบการเขียน</p>
+          <p>c. ข้าพเจ้าชอบการรวบรัดเพื่อความมันใจว่าการประชุดแต่ละครั้งไม่เสียเวลามากเกินไปหรือหลงประเด็น</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -227,7 +230,7 @@ const FormComponent = () => {
             ))}
             <p>Selected value: {value}</p>
           </div>
-          <p>d. ทดสอบการเขียน</p>
+          <p>d. ข้าพเจ้ามีความคิดและแสดงออกเป็นเอกลักษณ์ของตนเอง</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -237,7 +240,7 @@ const FormComponent = () => {
             ))}
             <p>Selected value: {value}</p>
           </div>
-          <p>e. ทดสอบการเขียน</p>
+          <p>e. ข้าพเจ้าพร้อมที่จะสนับสนุนข้อชี้แนะที่มีประโยชน์</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -247,7 +250,7 @@ const FormComponent = () => {
             ))}
             <p>Selected value: {value}</p>
           </div>
-          <p>f. ทดสอบการเขียน</p>
+          <p>f. ข้าพเจ้ามองเห็นแนวคิดและแนวทางพัฒนาใหม่ๆอย่างรวดเร็ว</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -257,7 +260,7 @@ const FormComponent = () => {
             ))}
             <p>Selected value: {value}</p>
           </div>
-          <p>g. ทดสอบการเขียน</p>
+          <p>g. ข้าพเจ้าพยายามรักษาความเป็นมืออาชีพ</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -267,7 +270,7 @@ const FormComponent = () => {
             ))}
             <p>Selected value: {value}</p>
           </div>
-          <p>h. ทดสอบการเขียน</p>
+          <p>h. ข้าพเจ้ามีความสามารถในการตัดสินปัญหาได้ถูกต้อง</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -277,7 +280,7 @@ const FormComponent = () => {
             ))}
             <p>Selected value: {value}</p>
           </div>
-          <p>i. ทดสอบการเขียน</p>
+          <p>i. ข้าพเจ้าสามารถบริหารจัดการให้เหมาะสมกับความต้องการของงาน</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -289,8 +292,9 @@ const FormComponent = () => {
           </div>
         </fieldset>
         {/*Section Question 4*/}
-        <fieldset name="section1">
-          <p>a. ทดสอบการเขียน</p>
+        <fieldset name="section4">
+          <h3>ตอนที่ 4. คุณสมบัติในการทำงานเป็นทีม</h3>
+          <p>a. ข้าพเจ้าชอบทำความรู้จักกับเพื่อนร่วมงานให้ดียิ่งขึ้น</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -300,7 +304,7 @@ const FormComponent = () => {
             ))}
             <p>Selected value: {value}</p>
           </div>
-          <p>b. ทดสอบการเขียน</p>
+          <p>b. ข้าพเจ้าแสดงออกในสิ่งที่ข้าพเจ้ารู้</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -310,7 +314,7 @@ const FormComponent = () => {
             ))}
             <p>Selected value: {value}</p>
           </div>
-          <p>c. ทดสอบการเขียน</p>
+          <p>c. ข้าพเจ้าไม่ลังเลที่จะแย้งแนวคิดของผู้อื่น</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -320,7 +324,7 @@ const FormComponent = () => {
             ))}
             <p>Selected value: {value}</p>
           </div>
-          <p>d. ทดสอบการเขียน</p>
+          <p>d. ข้าพเจ้าโต้เถียงเมื่อคิดว่ามีบางอย่างผิดพลาด</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -330,7 +334,7 @@ const FormComponent = () => {
             ))}
             <p>Selected value: {value}</p>
           </div>
-          <p>e. ทดสอบการเขียน</p>
+          <p>e. ข้าพเจ้ามีพรสวรรค์ในการทำงานให้สำเร็จลุล่วงตามแผน</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -340,7 +344,7 @@ const FormComponent = () => {
             ))}
             <p>Selected value: {value}</p>
           </div>
-          <p>f. ทดสอบการเขียน</p>
+          <p>f. ข้าพเจ้าหลีกเลี่ยงประเด็นที่ชัดเจนแล้ว และชอบเปิดประเด็นสิ่งที่ยังคลุมเครือ</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -350,7 +354,7 @@ const FormComponent = () => {
             ))}
             <p>Selected value: {value}</p>
           </div>
-          <p>g. ทดสอบการเขียน</p>
+          <p>g. ข้าพเจ้าใช้ความเป็นมืออาชีพกับงานทุกประเภท</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -360,7 +364,7 @@ const FormComponent = () => {
             ))}
             <p>Selected value: {value}</p>
           </div>
-          <p>h. ทดสอบการเขียน</p>
+          <p>h. ข้าพเจ้าชอบเป็นผู้ประสานงานกับบุคคลภายนอก</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -370,7 +374,7 @@ const FormComponent = () => {
             ))}
             <p>Selected value: {value}</p>
           </div>
-          <p>i. ทดสอบการเขียน</p>
+          <p>i. ข้าพเจ้าชอบรับฟังมุมมองที่หลากหลาย และสามารถนำมาใช้ในการตัดสินใจได้อย่างรวดเร็ว</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -382,8 +386,9 @@ const FormComponent = () => {
           </div>
         </fieldset>
         {/*Section Question 5*/}
-        <fieldset name="section1">
-          <p>a. ทดสอบการเขียน</p>
+        <fieldset name="section5">
+          <h3>ตอนที่ 5. ความพอใจในการทำงาน</h3>
+          <p>a. ข้าพเจ้าชอบวิเคราะห์สถานการณ์และชังน้ำหนักทางเลือกต่างๆ</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -393,7 +398,7 @@ const FormComponent = () => {
             ))}
             <p>Selected value: {value}</p>
           </div>
-          <p>b. ทดสอบการเขียน</p>
+          <p>b. ข้าพเจ้าชอบค้นหาวิธีการแก้ไขปัญหา</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -403,7 +408,7 @@ const FormComponent = () => {
             ))}
             <p>Selected value: {value}</p>
           </div>
-          <p>c. ทดสอบการเขียน</p>
+          <p>c. ข้าพเจ้าชอบพัฒนาความสำพันธ์กับเพื่อนร่วมงาน</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -413,7 +418,7 @@ const FormComponent = () => {
             ))}
             <p>Selected value: {value}</p>
           </div>
-          <p>d. ทดสอบการเขียน</p>
+          <p>d. ข้าพเจ้ามีอิทธิพลมากกับการตัดสินใจของกลุ่ม</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -423,7 +428,7 @@ const FormComponent = () => {
             ))}
             <p>Selected value: {value}</p>
           </div>
-          <p>e. ทดสอบการเขียน</p>
+          <p>e. ข้าพเจ้าชอบพบปะผู้คนที่มีแนวคิดต่างกัน</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -433,7 +438,7 @@ const FormComponent = () => {
             ))}
             <p>Selected value: {value}</p>
           </div>
-          <p>f. ทดสอบการเขียน</p>
+          <p>f. ข้าพเจ้าสามารถทำให้คนอื่นคล้อยตามในวัตถุประสงค์และลำดับความสำคัญของงาน</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -443,7 +448,7 @@ const FormComponent = () => {
             ))}
             <p>Selected value: {value}</p>
           </div>
-          <p>g. ทดสอบการเขียน</p>
+          <p>g. ข้าพเจ้ามีสมาธิเต็มที่กับงาน</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -453,7 +458,7 @@ const FormComponent = () => {
             ))}
             <p>Selected value: {value}</p>
           </div>
-          <p>h. ทดสอบการเขียน</p>
+          <p>h. ข้าพเจ้าชอบงานที่ใช้ความคิดสร้างสรรค์</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -463,7 +468,7 @@ const FormComponent = () => {
             ))}
             <p>Selected value: {value}</p>
           </div>
-          <p>i. ทดสอบการเขียน</p>
+          <p>i. ข้าพเจ้ารู้สึกว่าความสามารถพิเศษและการฝึกฝนทำให้ข้าพเจ้าได้เปรียบผู้อื่น</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -475,8 +480,9 @@ const FormComponent = () => {
           </div>
         </fieldset>
         {/*Section Question 6*/}
-        <fieldset name="section1">
-          <p>a. ทดสอบการเขียน</p>
+        <fieldset name="section6">
+          <h3>ตอนที่ 6. เมื่อได้รับงานยากในเวลาที่จำกัดและทีมงานที่ไม่คุ้นเคย</h3>
+          <p>a. ข้าพเจ้าจะค้นคว้าให้มากที่สุดเท่าที่จะจำได้</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -486,7 +492,7 @@ const FormComponent = () => {
             ))}
             <p>Selected value: {value}</p>
           </div>
-          <p>b. ทดสอบการเขียน</p>
+          <p>b. ข้าพเจ้าจะพยายามแก้ไขปัญหาด้วยตัวเองแล้วจึงนำเสนอต่อทีมงาน</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -496,7 +502,7 @@ const FormComponent = () => {
             ))}
             <p>Selected value: {value}</p>
           </div>
-          <p>c. ทดสอบการเขียน</p>
+          <p>c. ข้าพเจ้าอยากทำงานร่วมกับเพื่อนร่วมงานที่มีแนวคิดในเชิงบวก</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -506,7 +512,7 @@ const FormComponent = () => {
             ))}
             <p>Selected value: {value}</p>
           </div>
-          <p>d. ทดสอบการเขียน</p>
+          <p>d. ข้าพเจ้าจะหาแนวทางลดขนาดของงานโดยแบ่งงานให้เหมาะสมที่สุดกับสมาชิกแต่ละคนในทีม</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -516,7 +522,7 @@ const FormComponent = () => {
             ))}
             <p>Selected value: {value}</p>
           </div>
-          <p>e. ทดสอบการเขียน</p>
+          <p>e. ข้าพเจ้าสามารถรับรู้ได้ว่าอะไรคือสิ่งที่เร่งด่วน ช่วยให้มันใจได้ว่างานจะไม่ล่าช้ากว่ากำหนด</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -526,7 +532,7 @@ const FormComponent = () => {
             ))}
             <p>Selected value: {value}</p>
           </div>
-          <p>f. ทดสอบการเขียน</p>
+          <p>f. ข้าพเจ้าเชื่อว่าข้าพเจ้าสามารถควบคุมอารมณ์ได้ดี</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -536,7 +542,7 @@ const FormComponent = () => {
             ))}
             <p>Selected value: {value}</p>
           </div>
-          <p>g. ทดสอบการเขียน</p>
+          <p>g. ข้าพเจ้าจะทำงานหลักต่อไปภายใต้ความขัดแย้งและแรงกดดัน</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -546,7 +552,7 @@ const FormComponent = () => {
             ))}
             <p>Selected value: {value}</p>
           </div>
-          <p>h. ทดสอบการเขียน</p>
+          <p>h. ข้าพเจ้าต้องการเป็นผู้นำของกลุ่มหากพบว่างานไม่มีความก้าวหน้า</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -556,7 +562,7 @@ const FormComponent = () => {
             ))}
             <p>Selected value: {value}</p>
           </div>
-          <p>i. ทดสอบการเขียน</p>
+          <p>i. ข้าพเจ้าจะการสนทนาหรือการประชุดแสดงความคิดเห็นที่จะกระตุ้นให้เกิดความคิดใหม่ๆเพื่อให้งานก้าวหน้า</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -568,8 +574,9 @@ const FormComponent = () => {
           </div>
         </fieldset>
         {/*Section Question 7*/}
-        <fieldset name="section1">
-          <p>a. ทดสอบการเขียน</p>
+        <fieldset name="section7">
+          <h3>ตอนที่ 7. เมื่อผบปัญหา</h3>
+          <p>a. ข้าพเจ้าแสดงออกมาเกินไปเมื่อเพื่อนร่วมงาน “ดอง” งาน</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -579,7 +586,7 @@ const FormComponent = () => {
             ))}
             <p>Selected value: {value}</p>
           </div>
-          <p>b. ทดสอบการเขียน</p>
+          <p>b. เพื่อนร่วมงานบางคนต่อว่า ว่าข้าพเจ้าละเอียดเกินไป</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -589,7 +596,7 @@ const FormComponent = () => {
             ))}
             <p>Selected value: {value}</p>
           </div>
-          <p>c. ทดสอบการเขียน</p>
+          <p>c. ความต้องการตรวจสอบความถูกต้องของรายละเอียดสำคัญของข้าพเจ้าไม่เป็นที่ปรารถนาในบางเวลา</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -599,7 +606,7 @@ const FormComponent = () => {
             ))}
             <p>Selected value: {value}</p>
           </div>
-          <p>d. ทดสอบการเขียน</p>
+          <p>d. ข้าพเจ้าเบื่อหากต้องร่วมงานกับเพื่อนร่วมงานที่เฉื่อยชา</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -609,7 +616,7 @@ const FormComponent = () => {
             ))}
             <p>Selected value: {value}</p>
           </div>
-          <p>e. ทดสอบการเขียน</p>
+          <p>e. ข้าพเจ้าคิดส่างานเริ่มต้นได้ยากหากจุดมุ่งหมายยังไม่ชัดเจน</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -619,7 +626,7 @@ const FormComponent = () => {
             ))}
             <p>Selected value: {value}</p>
           </div>
-          <p>f. ทดสอบการเขียน</p>
+          <p>f. ข้าพเจ้ามีปัญหาในการจัดการปัญหาที่ซับซ้อน</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -629,7 +636,7 @@ const FormComponent = () => {
             ))}
             <p>Selected value: {value}</p>
           </div>
-          <p>g. ทดสอบการเขียน</p>
+          <p>g. ข้าพเจ้าขอความช่วยเหลือจากเพื่อนร่วมงานเมื่อได้รับงานที่ข้าพเจ้าไม่สามารถทำได้</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -639,7 +646,7 @@ const FormComponent = () => {
             ))}
             <p>Selected value: {value}</p>
           </div>
-          <p>h. ทดสอบการเขียน</p>
+          <p>h. ข้าพเจ้าคิดว่าข้าพเจ้าทำงานคนเดียวได้ดีกว่าการทำงานเป็นทีม</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>
@@ -649,7 +656,7 @@ const FormComponent = () => {
             ))}
             <p>Selected value: {value}</p>
           </div>
-          <p>i. ทดสอบการเขียน</p>
+          <p>i. ข้าพเจ้าลังเลในการแสดงความคิดเห็นต่อหน้าผู้ใหญ่หรือผู้มีอำนาจ</p>
           <div className="Question">
             {[...Array(11).keys()].map((number) => (
               <label key={number}>

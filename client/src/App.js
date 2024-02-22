@@ -1,18 +1,17 @@
 import React from 'react';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
-
+import LoginSignup from './LoginSignup.jsx';
 import HomePage from './components/HomePage';
 import AboutPage from './components/AboutPage';
 import HistoryPage from './components/HistoryPage';
+import Loginsignup from './LoginSignup.jsx';
+
 
 function App() {
   return (
-    <Router>
-      <Route exact path="/" component={HomePage} />
-      <Route path="/about" component={AboutPage} />
-      <Route path="/contact" component={HistoryPage} />
-    </Router>
+    <Loginsignup/>
   );
 }
 
 export default App;
+

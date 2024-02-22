@@ -1,13 +1,6 @@
-import pkg from "pg"
-const {Pool} = pkg
-const db = new Pool(
-    {
-        user:"postgres",
-        password:"nnu1123",
-        host:"localhost",
-        port:5432,
-        database:"IRT"
-    }
-)
-
-export default db
+import { Sequelize } from "sequelize"
+const sequelize = new Sequelize('IRT','postgres','nnu1123',{
+    host:"localhost",
+    dialect: 'postgres'
+})
+export default sequelize

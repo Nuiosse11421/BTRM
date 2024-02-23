@@ -35,7 +35,7 @@ const Register = () => {
             <form onSubmit={handleSubmit}>
                 <div>
                     <label>Username:</label>
-                    <input type="text" name="username" value={formData.username} onChange={handleChange} />
+                    <input type="text" name="username" placeholder="Username" value={formData.username} onChange={handleChange} />
                 </div>
                 <div>
                     <label>Email:</label>
@@ -52,14 +52,6 @@ const Register = () => {
                 <div>
                     <label>Lastname:</label>
                     <input type="text" name="lastname" value={formData.lastname} onChange={handleChange} />
-                </div>
-                <div>
-                    <label>Age:</label>
-                    <input type="number" name="age" value={formData.age} onChange={handleChange} />
-                </div>
-                <div>
-                    <label>Nationality:</label>
-                    <input type="text" name="nationality" value={formData.nationality} onChange={handleChange} />
                 </div>
                 <div>
                     <label>Gender:</label>

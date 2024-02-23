@@ -2,20 +2,28 @@
 import express from 'express'
 import User from '../models/userModel.mjs'
 import Profile from '../models/profileModel.mjs'
-const router = express.Router();
+import { Op } from 'sequelize'
+const router = express.Router()
 
 router.post("/api/createUser", async (req, res) => {
-  const { username, email, password, name, lastname, age, nationality, gender, date_of_birth } = req.body;
+  const { username, email, password, firstname, lastname, gender, date_of_birth } = req.body;
   try {
+    const existingUser = await User.findOne({
+      where: {
+        [Op.or]: [{ email }, { username }]
+      }
+    });
+
+    if (existingUser) {
+      return res.status(400).json({ error: "User with the same email or username already exists" });
+    }
     // Create user
     const user = await User.create({ username, email, password });
 
     // Create profile
     const profile = await Profile.create({
-      name,
+      firstname,
       lastname,
-      age,
-      nationality,
       gender,
       date_of_birth,
       UserId: user.id 

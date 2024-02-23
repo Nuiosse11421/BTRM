@@ -58,6 +58,9 @@ const LoginSignup = () => {
                     <input type="email" name="email" placeholder='email' value={formData.email} onChange={dataChange} />
                     <input type="password" name="password" placeholder='password' value={formData.password} onChange={dataChange} />
                     <input type="password" name="c_password" placeholder='Confirm Password' />
+                    {/*แก้ไข Style ให้ First และ lastname อยู้ในบรรทัดเดียวกัน ถ้าแนะนำให้ใช้ Classname ช่วยในการ Edit 
+                    เช่น input className="input2" ข้างใน Css ก็สามารภทำแบบนี้ได้
+                    .input.input2{ข้างในนี้ก็แก้ไข Style}*/}
                     <input type="text" name='firstname' placeholder='First Name' value={formData.firstname} onChange={dataChange} />
                     <input type="text" name='lastname' placeholder='Last Name' value={formData.lastname} onChange={dataChange} />
                     <input type="date" name="date_of_birth" value={formData.date_of_birth} onChange={dataChange} />

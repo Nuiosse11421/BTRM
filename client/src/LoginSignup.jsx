@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
+import { useNavigate} from 'react-router-dom'
 import axios from 'axios';
-import Alert from './components/Alert'; // Import the Alert component
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
@@ -13,30 +13,55 @@ function Anchor({ href, children }) {
 }
 
 const LoginSignup = () => {
+    const navigate = useNavigate()
+    //Register Data Set
     const [formData, getFormData] = useState({
         username: '',
         email: '',
         password: '',
+        c_password: '',
         firstname: '',
         lastname: '',
         gender: '',
         date_of_birth: '',
-    });
+    })
+    //Login Data Set
+    const [loginD, getLD] = useState({
+        email: '',
+        password: '',
+    })
+    //Get Data From Field Login
+    const putData = (element) => {
+        const { name, value } = element.target
+        getLD(prevState => ({ ...prevState, [name]: value }))
+    }
     const dataChange = (element) => {
         const { name, value } = element.target;
         getFormData(prevState => ({ ...prevState, [name]: value }));
     }
+
+    const LoginSB = async (element) => {
+        element.preventDefault()
+        try {
+            const response = await axios.post('http://localhost:8000/login/api/checkUsertoLogin', loginD)
+            console.log("User login successful", response.data)
+            navigate('/')
+        } catch (err) {
+
+        }
+    }
+
 
     const SubmitRegister = async (element) => {
         element.preventDefault();
         try {
             const response = await axios.post('http://localhost:8000/register/api/createUser', formData);
             console.log("User register successful", response.data);
-            setIsRegistered(true); // Set registration success state to true
+
         } catch (err) {
             console.error(err);
             if (err.response && err.response.status === 400) {
-                setAlertMessage("User with the same email or username already exists");
+
             }
         }
     }
@@ -44,7 +69,6 @@ const LoginSignup = () => {
     return (
         <div className='Container' id='Container'> {/* Add active class if registration is successful */}
             {/* Render alert if alertMessage is not null */}
-            {alertMessage && <Alert message={alertMessage} />}
             <div className='Form-container sign-up'>
                 <form onSubmit={SubmitRegister}>
                     <h1>Create Account</h1>
@@ -73,11 +97,11 @@ const LoginSignup = () => {
                     {/*<input type="text" name="Address" placeholder="Your address" />
                     <input type="text" name="Phone_Number" placeholder="Phone Number" />
                     <input type="text" name="Additional_Information" placeholder="More Information" />*/}
-                    <button type='submit'>Sign up</button>
+                    <button type='submit' id='registerBT'>Sign up</button>
                 </form>
             </div>
             <div className='Form-container sign-in'>
-                <form>
+                <form onSubmit={LoginSB}>
                     <h1>Sign In</h1>
                     <div className="Social-icons">
                         <FontAwesomeIcon icon={faGoogle} className="icon" />
@@ -85,10 +109,10 @@ const LoginSignup = () => {
                         <FontAwesomeIcon icon={faFacebook} className="icon" />
                     </div>
                     <span>or use your email password for sign in</span>
-                    <input type="email" name="email" placeholder="Email" />
-                    <input type="password" name="Password" placeholder="Password" />
+                    <input type="email" name="email" placeholder="Email" value={loginD.email} onChange={putData} />
+                    <input type="password" name="password" placeholder="Password" value={loginD.password} onChange={putData} />
                     <Anchor href="#">Forgot Your Password ?</Anchor>
-                    <button>Sign In</button>
+                    <button type='submit' id='LoginBT'>Sign In</button>
                 </form>
             </div>
             <div className="Toggle-container">
@@ -96,7 +120,7 @@ const LoginSignup = () => {
                     <div className="Toggle-panel Toggle-left">
                         <h1>Welcome Back!</h1>
                         <p>Enter your personal details to use all of site features</p>
-                        <button className="hidden" id='Login'>Sign In</button>
+                        <button className="hidden" id='Login' name='Login'>Sign In</button>
                     </div>
                     <div className="Toggle-panel Toggle-right">
                         <h1>Hello Everyone!</h1>
@@ -106,6 +130,7 @@ const LoginSignup = () => {
                 </div>
             </div>
             <script async src="TestLogin.js"></script>
+
         </div>
     );
 }

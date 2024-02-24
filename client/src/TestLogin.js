@@ -11,3 +11,12 @@ document.addEventListener('DOMContentLoaded', function() {
         container.classList.remove("active");
     });
 });
+
+
+document.addEventListener('DOMContentLoaded', function(){
+    const container = document.getElementById('Container')
+    const registerBT = document.getElementById('registerBT')
+    registerBT.addEventListener('click',()=>{
+        container.classList.remove("active")
+    })
+})

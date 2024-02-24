@@ -2,6 +2,7 @@
 import express from 'express'
 import User from '../models/userModel.mjs'
 import Profile from '../models/profileModel.mjs'
+import bcrypt from 'bcrypt'
 import { Op } from 'sequelize'
 const router = express.Router()
 
@@ -17,8 +18,9 @@ router.post("/api/createUser", async (req, res) => {
     if (existingUser) {
       return res.status(400).json({ error: "User with the same email or username already exists" });
     }
+    const hashedP = await bcrypt.hash(password, 10)
     // Create user
-    const user = await User.create({ username, email, password });
+    const user = await User.create({ username, email, password:hashedP});
 
     // Create profile
     const profile = await Profile.create({

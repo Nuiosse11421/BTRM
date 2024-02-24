@@ -2,6 +2,8 @@ import express from 'express'
 import sequelize from './db.mjs'
 import cors from 'cors'
 import registerController from './routes/registerController.mjs'
+import loginCon from './routes/loginController.mjs'
+import authCon from './routes/AuthController.mjs'
 
 
 const app = express()
@@ -15,6 +17,12 @@ app.get('/',(req,res)=>{
 })
 //router
 app.use('/register', registerController)
+app.use('/login', loginCon)
+
+
+
+
+//run server
 const PORT = process.env.PORT || 8000;
 app.listen(PORT,async()=>{
     console.log('listening on http://localhost:8000')

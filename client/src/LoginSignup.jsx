@@ -16,7 +16,6 @@ const LoginSignup = () => {
     const navigate = useNavigate()
     //Register Data Set
     const [formData, getFormData] = useState({
-        username: '',
         email: '',
         password: '',
         c_password: '',
@@ -45,7 +44,7 @@ const LoginSignup = () => {
         try {
             const response = await axios.post('http://localhost:8000/login/api/checkUsertoLogin', loginD)
             console.log("User login successful", response.data)
-            navigate('/')
+            navigate('/home')
         } catch (err) {
 
         }

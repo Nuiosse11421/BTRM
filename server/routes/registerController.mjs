@@ -7,20 +7,20 @@ import { Op } from 'sequelize'
 const router = express.Router()
 
 router.post("/api/createUser", async (req, res) => {
-  const { username, email, password, firstname, lastname, gender, date_of_birth } = req.body;
+  const {email, password, firstname, lastname, gender, date_of_birth } = req.body;
   try {
     const existingUser = await User.findOne({
       where: {
-        [Op.or]: [{ email }, { username }]
+        [Op.or]: [{ email }]
       }
     });
 
     if (existingUser) {
-      return res.status(400).json({ error: "User with the same email or username already exists" });
+      return res.status(400).json({ error: "User with the same email already exists" });
     }
     const hashedP = await bcrypt.hash(password, 10)
     // Create user
-    const user = await User.create({ username, email, password:hashedP});
+    const user = await User.create({ email, password:hashedP});
 
     // Create profile
     const profile = await Profile.create({

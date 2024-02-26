@@ -30,6 +30,6 @@ const PrivateRoute = ({ element, ...rest }) => {
         element={isAuthenticated() ? element : <Navigate to="/login" />}
       />
     );
-  };
+  }
 
 export default PrivateRoute

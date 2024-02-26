@@ -203,3 +203,7 @@ body{
 .Container.active .Toggle-right{
     transform: translateX(200%);
 }
+.Form-grid{
+    display: flex;
+    
+}

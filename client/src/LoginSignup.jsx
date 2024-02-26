@@ -78,25 +78,25 @@ const LoginSignup = () => {
                         <FontAwesomeIcon icon={faFacebook} className="icon" />
                     </div>
                     <span>or use your email for registered</span>
-                    <input type="text" name="username" placeholder='Username' value={formData.username} onChange={dataChange} />
-                    <input type="email" name="email" placeholder='email' value={formData.email} onChange={dataChange} />
-                    <input type="password" name="password" placeholder='password' value={formData.password} onChange={dataChange} />
-                    <input type="password" name="c_password" placeholder='Confirm Password' />
+                    <input type="email" name="email" placeholder='Email' value={formData.email} onChange={dataChange} />
                     {/*แก้ไข Style ให้ First และ lastname อยู้ในบรรทัดเดียวกัน ถ้าแนะนำให้ใช้ Classname ช่วยในการ Edit 
                     เช่น input className="input2" ข้างใน Css ก็สามารภทำแบบนี้ได้
                     .input.input2{ข้างในนี้ก็แก้ไข Style}*/}
-                    <input type="text" name='firstname' placeholder='First Name' value={formData.firstname} onChange={dataChange} />
-                    <input type="text" name='lastname' placeholder='Last Name' value={formData.lastname} onChange={dataChange} />
+                    <div className='Form-grid password'>
+                        <input type="password" name="password" placeholder='password' value={formData.password} onChange={dataChange} />
+                        <input type="password" name="c_password" placeholder='Confirm Password' />
+                    </div>
+                    <div className='Form-grid name'>
+                        <input type="text" name='firstname' placeholder='First Name' value={formData.firstname} onChange={dataChange} />
+                        <input type="text" name='lastname' placeholder='Last Name' value={formData.lastname} onChange={dataChange} />
+                    </div>
                     <input type="date" name="date_of_birth" value={formData.date_of_birth} onChange={dataChange} />
                     <select name="gender" value={formData.gender} onChange={dataChange}>
-                        <option value="">Select Gender</option>
+                        <option value="">Select Gender...</option>
                         <option value="male">Male</option>
                         <option value="female">Female</option>
                         <option value="LGBTQ+">LGBTQ+</option>
                     </select>
-                    {/*<input type="text" name="Address" placeholder="Your address" />
-                    <input type="text" name="Phone_Number" placeholder="Phone Number" />
-                    <input type="text" name="Additional_Information" placeholder="More Information" />*/}
                     <button type='submit' id='registerBT'>Sign up</button>
                 </form>
             </div>

@@ -2,9 +2,9 @@ import bcrypt from 'bcrypt'
 import express from 'express'
 import User from '../models/userModel.mjs'
 
-const route = express.Router()
+const router = express.Router()
 
-route.post('/api/checkUsertoLogin' , async (req,res)=>{
+router.post('/api/checkUsertoLogin' , async (req,res)=>{
     const {email,password} = req.body
     try{
         const user = await User.findOne({where:{email}})
@@ -18,7 +18,8 @@ route.post('/api/checkUsertoLogin' , async (req,res)=>{
         res.status(200).json('Login successful')
     }catch(err){
         console.error(err.message)
+        res.status(500).json({error: "Internal Server Error"})
     }
 })
 
-export default route
+export default router

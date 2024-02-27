@@ -1,9 +1,11 @@
+/* eslint-disable react/jsx-no-undef */
 // App.jsx
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './LoginSignup'
 import PrivateRoute from './components/PrivateRoute';
 import Home from './components/HomePage'
+import NavBar from './components/NavBar';
 
 
 function App() {
@@ -13,7 +15,9 @@ function App() {
   }
   return (
     <Router>
+      <NavBar />
       <Routes>
+        <Route path='/' element={<Home/>}/>
         <Route path='/login' element={<Login/>}/>
       </Routes>
     </Router>

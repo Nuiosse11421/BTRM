@@ -44,7 +44,7 @@ const LoginSignup = () => {
         try {
             const response = await axios.post('http://localhost:8000/login/api/checkUsertoLogin', loginD)
             console.log("User login successful", response.data)
-            navigate('/home')
+            navigate('/homepage')
         } catch (err) {
 
         }

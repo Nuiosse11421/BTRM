@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faFacebook } from '@fortawesome/free-brands-svg-icons';
-import './TestLogin.js';
 import './LoginSignup.css'; // แก้ไขชื่อไฟล์ CSS
 
 function Anchor({ href, children }) {
@@ -44,7 +43,6 @@ const LoginSignup = () => {
         try {
             const response = await axios.post('http://localhost:8000/login/api/checkUsertoLogin', loginD)
             console.log("User login successful", response.data)
-            navigate('/homepage')
         } catch (err) {
 
         }
@@ -56,7 +54,8 @@ const LoginSignup = () => {
         try {
             const response = await axios.post('http://localhost:8000/register/api/createUser', formData);
             console.log("User register successful", response.data);
-
+            const container = document.getElementById('Container')
+            container.classList.remove('active')
         } catch (err) {
             console.error(err);
             if (err.response && err.response.status === 400) {
@@ -65,11 +64,26 @@ const LoginSignup = () => {
         }
     }
 
+
+    //Even tranfrom login to register
+    document.addEventListener('DOMContentLoaded', function () {
+        const RegBTN = document.getElementById('Register')
+        const container = document.getElementById('Container')
+        const loginBTN = document.getElementById('Login')
+        RegBTN.addEventListener('click', () => {
+            container.classList.add('active')
+        })
+        loginBTN.addEventListener('click', () => {
+            container.classList.remove('active')
+        })
+    })
+
+
     return (
         <div className='Container' id='Container'> {/* Add active class if registration is successful */}
             {/* Render alert if alertMessage is not null */}
             <div className='Form-container sign-up'>
-                <form onSubmit={SubmitRegister}>
+                <form id='regFrom' onSubmit={SubmitRegister}>
                     <h1>Create Account</h1>
                     <div className="Social-icons">
                         <FontAwesomeIcon icon={faGoogle} className="icon" />
@@ -100,7 +114,7 @@ const LoginSignup = () => {
                 </form>
             </div>
             <div className='Form-container sign-in'>
-                <form onSubmit={LoginSB}>
+                <form id='loForm' onSubmit={LoginSB}>
                     <h1>Sign In</h1>
                     <div className="Social-icons">
                         <FontAwesomeIcon icon={faGoogle} className="icon" />
@@ -128,8 +142,6 @@ const LoginSignup = () => {
                     </div>
                 </div>
             </div>
-            <script async src="TestLogin.js"></script>
-
         </div>
     );
 }

@@ -16,8 +16,7 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path='/login' element={<Login />} />
-        <Route path='/' element={<Home />} />
+        <Route path='/' element={<Login />} />
         <Route
           path="/homepage" // Adjust path from /dashboard to /homepage
           element={isAuthenticated() ? <Homepage /> : <Navigate to="/login" replace />}

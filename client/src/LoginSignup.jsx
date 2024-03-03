@@ -42,9 +42,11 @@ const LoginSignup = () => {
         element.preventDefault()
         try {
             const response = await axios.post('http://localhost:8000/login/api/checkUsertoLogin', loginD)
-            console.log("User login successful", response.data)
+            const {token} = response.data
+            localStorage.setItem('token', token)
+            navigate('/homepage')
         } catch (err) {
-
+            console.error(err)
         }
     }
 

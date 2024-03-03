@@ -1,7 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import axios from 'axios';
+import { Navigate } from 'react-router-dom';
+const Logout = () => {
+  const navigate = useNavigate();
 
-function Logout() {
-  return <h1>Logout</h1>;
-}
+  useEffect(() => {
+    const logout = async () => {
+      try {
+        await axios.post('/logout');
+        localStorage.removeItem('token');
+        navigate('/');
+      } catch (error) {
+        console.error('Error logging out:', error);
+      }
+    };
+    logout();
+  }, [navigate]);
+  return null; 
+};
 
 export default Logout;

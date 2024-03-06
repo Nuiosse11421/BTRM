@@ -3,6 +3,7 @@ import sequelize from './db.mjs'
 import cors from 'cors'
 import registerController from './routes/registerController.mjs'
 import loginCon from './routes/loginController.mjs'
+import formController from './routes/formController.mjs'
 
 
 const app = express()
@@ -17,6 +18,7 @@ app.get('/',(req,res)=>{
 //router
 app.use('/register', registerController)
 app.use('/login', loginCon)
+app.use('/form', formController)
 
 
 

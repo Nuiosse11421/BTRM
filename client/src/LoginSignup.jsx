@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState ,useEffect} from 'react';
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -68,17 +68,27 @@ const LoginSignup = () => {
 
 
     //Even tranfrom login to register
-    document.addEventListener('DOMContentLoaded', function () {
-        const RegBTN = document.getElementById('Register')
-        const container = document.getElementById('Container')
-        const loginBTN = document.getElementById('Login')
-        RegBTN.addEventListener('click', () => {
-            container.classList.add('active')
-        })
-        loginBTN.addEventListener('click', () => {
-            container.classList.remove('active')
-        })
-    })
+    useEffect(() => {
+        const regButton = document.getElementById('Register');
+        const container = document.getElementById('Container');
+        const loginButton = document.getElementById('Login');
+
+        const handleRegisterClick = () => {
+            container.classList.add('active');
+        };
+
+        const handleLoginClick = () => {
+            container.classList.remove('active');
+        };
+
+        regButton.addEventListener('click', handleRegisterClick);
+        loginButton.addEventListener('click', handleLoginClick);
+
+        return () => {
+            regButton.removeEventListener('click', handleRegisterClick);
+            loginButton.removeEventListener('click', handleLoginClick);
+        };
+    }, []);
 
 
     return (

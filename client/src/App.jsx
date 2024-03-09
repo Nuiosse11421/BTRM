@@ -4,25 +4,22 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './LoginSignup'
 import Home from './components/HomePage'
+import FormComponent from './components/FormComponent'
+import FormTest from './components/formtest'
 
 const isAuthenticated = () => {
   const token = localStorage.getItem('token')
   return !!token
 }
-const PrivateRoute = ({ element: Element, ...rest })=> (
-  isAuthenticated() ? <Route {...rest} element={<Element />} /> : <Navigate to="/login" replace />
-)
 const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path='/' element={<Login />} />
-        <Route
-          path="/homepage" // Adjust path from /dashboard to /homepage
-          element={isAuthenticated() ? <Homepage /> : <Navigate to="/login" replace />}
-        />
+        <Route path='/login' element={<Login />} />
+        <Route path='/' element={<Home/>}/>
+        <Route path='/form' element={<FormComponent/>}/>
+        <Route path='/formtest' element={<FormTest/>}/>
         {/* Add more routes here */}
-        <Route path="/" element={<Navigate to="/homepage" replace />} />
       </Routes>
     </Router>
   );

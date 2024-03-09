@@ -5,6 +5,7 @@ import Profile from '../models/profileModel.mjs'
 const router = express.Router()
 
 router.post('/submitForm',async(req,res)=>{
+    const formData = req.body
     try{
         console.log('Received form data: ', req.body)
     }

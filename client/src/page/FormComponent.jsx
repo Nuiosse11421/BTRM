@@ -1,6 +1,6 @@
 import React, { useState, useEffect} from "react";
 import { useNavigate } from "react-router-dom";
-import './css/formhide.css'
+import '../components/js/formHide'
 
 const FormComponent = () => {
   const navigate = useNavigate()
@@ -50,14 +50,6 @@ const FormComponent = () => {
     if(!token){
       navigate('/login')
     }
-  }
-  const renderRadioButtons = (questionId)=>{
-    return [...Array(11).key()].map((number)=>{
-      <label key={number}>
-        <input type="radio" id={`${questionId}_${number}`} name={questionId} onChange={(event) => handleChange(event,questionId)} />
-        {number}
-      </label>
-    })
   }
   return (
     <div>

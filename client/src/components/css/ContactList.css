@@ -1,0 +1,32 @@
+/* ContactList.css */
+
+.card {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    size: 5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn {
+    padding: 5px 10px;
+    border: none;
+    background-color: #dc3545;
+    color: white;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #c82333;
+}

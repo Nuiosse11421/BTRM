@@ -14,6 +14,7 @@ function HomePage() {
           <button>Go to Result Page</button>
         </Link>
         <Link to="/login">Login</Link>
+        <Link to="/contact">contact</Link>
       </div>
     </div>
   );

@@ -6,6 +6,7 @@ import Login from './LoginSignup'
 import Home from './components/HomePage'
 import FormComponent from './components/FormComponent'
 import FormTest from './components/formtest'
+import ContactManagement from './components/Contact' 
 
 const isAuthenticated = () => {
   const token = localStorage.getItem('token')
@@ -19,6 +20,7 @@ const App = () => {
         <Route path='/' element={<Home/>}/>
         <Route path='/form' element={<FormComponent/>}/>
         <Route path='/formtest' element={<FormTest/>}/>
+        <Route path='/contact' element={<ContactManagement/>}/>
         {/* Add more routes here */}
       </Routes>
     </Router>

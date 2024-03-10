@@ -44,7 +44,7 @@ const LoginSignup = () => {
             const response = await axios.post('http://localhost:8000/login/api/checkUsertoLogin', loginD)
             const {token} = response.data
             localStorage.setItem('token', token)
-            navigate('/homepage')
+            navigate('/')
         } catch (err) {
             console.error(err)
         }

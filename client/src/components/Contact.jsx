@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // ContactManagement.jsx
 import React, { useState } from 'react';
 import './css/ContactManager.css'; // Import CSS file
@@ -102,27 +101,11 @@ const ContactManagement = () => {
         setContacts([...contacts, newContact]);
     };
 
-=======
-// ContactManager.jsx
-import React, { useState } from 'react';
-import './CSS/ContactManager.css'; // Import CSS file
-import ContactList from './ContactList'; // Import ContactList component
-import NavBar from './NavBar';
-const ContactManager = () => {
-    const [contacts, setContacts] = useState([]);
-
-    const addContact = (name) => {
-        const newContact = { name };
-        setContacts([...contacts, newContact]);
-    };
-
->>>>>>> d7d5da2bb4a427601a79a82436fe4d2c018e5217
     const removeContact = (index) => {
         const updatedContacts = contacts.filter((_, i) => i !== index);
         setContacts(updatedContacts);
     };
 
-<<<<<<< HEAD
     const searchContact = (name) => {
         const searched = contacts.filter(contact => contact.name.toLowerCase().includes(name.toLowerCase()));
         setSearchedContacts(searched);
@@ -180,32 +163,6 @@ const ContactManager = () => {
                                 </div>
                             </div>
                         ))}
-=======
-    return (
-        <>
-
-            <div className="app">
-                <NavBar />
-                <div className="app-container">
-                    <h1>Contact Management</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores amet incidunt, 
-                        mollitia beatae ea eaque quibusdam numquam repellat enim! Reprehenderit?</p>
-                    <div className="add-contact">
-                        <h2>Add Contact</h2>
-                        <form onSubmit={(e) => {
-                            e.preventDefault();
-                            const name = e.target.elements.name.value;
-                            addContact(name);
-                            e.target.reset();
-                        }}>
-                            <input type="text" name="name" placeholder="Enter Name or ID" />
-                            <button type="submit">Search</button>
-                        </form>
-                    </div>
-                    <div className="contact-list">
-                        <h2>Contact List</h2>
-                        <ContactList contacts={contacts} removeContact={removeContact} />
->>>>>>> d7d5da2bb4a427601a79a82436fe4d2c018e5217
                     </div>
                 </div>
             </div>
@@ -213,8 +170,4 @@ const ContactManager = () => {
     );
 };
 
-<<<<<<< HEAD
 export default ContactManagement;
-=======
-export default ContactManager;
->>>>>>> d7d5da2bb4a427601a79a82436fe4d2c018e5217

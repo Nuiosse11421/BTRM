@@ -4,8 +4,8 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './LoginSignup'
 import Home from './components/HomePage'
-import FormComponent from './components/FormComponent'
-import FormTest from './components/formtest'
+import FormComponent from './page/formtest/formtest.component'
+import FormTest from './pages/FormTest/'
 import ContactManagement from './components/Contact' 
 
 const isAuthenticated = () => {

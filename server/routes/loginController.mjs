@@ -7,7 +7,7 @@ const router = express.Router()
 router.post('/api/checkUsertoLogin' , async (req,res)=>{
     const {email,password} = req.body
     try{
-        const user = await User.findOne({where:{email}})
+        const user = await User.findOne({email})
         const isValidP = await bcrypt.compare(password, user.password)
         if(!user){
             return res.status(401).json({error:"Invalid email or password"})

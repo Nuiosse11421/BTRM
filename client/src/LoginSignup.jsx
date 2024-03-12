@@ -11,7 +11,7 @@ function Anchor({ href, children }) {
     return <a href={href}>{children}</a>;
 }
 
-const LoginSignup = () => {
+const LoginSignup = ({ onLogin }) => {
     const navigate = useNavigate()
     //Register Data Set
     const [formData, getFormData] = useState({
@@ -41,9 +41,8 @@ const LoginSignup = () => {
     const LoginSB = async (element) => {
         element.preventDefault()
         try {
-            const response = await axios.post('http://localhost:8000/login/api/checkUsertoLogin', loginD)
-            const {token} = response.data
-            localStorage.setItem('token', token)
+            const response = await axios.post('http://localhost:8000/api/login', loginD)
+            onLogin(response.data.user, response.data.token);
             navigate('/')
         } catch (err) {
             console.error(err)
@@ -54,8 +53,8 @@ const LoginSignup = () => {
     const SubmitRegister = async (element) => {
         element.preventDefault();
         try {
-            const response = await axios.post('http://localhost:8000/register/api/createUser', formData);
-            console.log("User register successful", response.data);
+            const response = await axios.post('http://localhost:8000/api/register', formData);
+            console.log(response.data.message)
             const container = document.getElementById('Container')
             container.classList.remove('active')
         } catch (err) {

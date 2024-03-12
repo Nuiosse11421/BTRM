@@ -5,7 +5,7 @@ import Contact from '../models/contactModel.mjs'
 import bcrypt from 'bcrypt'
 const router = express.Router()
 
-router.post("/api/createUser", async (req, res) => {
+router.post("/register", async (req, res) => {
   const {email, password, firstname, lastname, gender, date_of_birth } = req.body;
   try {
     const existingUser = await User.findOne({email})
@@ -15,10 +15,9 @@ router.post("/api/createUser", async (req, res) => {
     }
     const hashedP = await bcrypt.hash(password, 10)
     // Create user
-    const newUser = await User.create({ email, password:hashedP});
-
-    // Create profile
-    const newProfile = await Profile.create({
+    const newUser = await User.create({
+      email,
+      password:hashedP,
       firstname,
       lastname,
       gender,
@@ -26,10 +25,10 @@ router.post("/api/createUser", async (req, res) => {
       _id: newUser.id,
       roles: {}
     });
-    const newContact = await Contact.create({_id: newUser.id, contact_ids:[]})
+    const newContact = await Contact.create({ _id: newUser._id, contact_ids: [] });
 
     
-    res.status(201).json({ message: "User registered successfully", newUser, newProfile });
+    res.status(201).json({ message: "User registered successfully", newUser});
   } catch (err) {
     console.error(err.message);
     res.status(500).json({ error: "Internal server error",message:err.message }); 

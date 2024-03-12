@@ -6,6 +6,7 @@ import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 import './LoginSignup.css'; // แก้ไขชื่อไฟล์ CSS
+import NavBar from './components/NavBar';
 
 function Anchor({ href, children }) {
     return <a href={href}>{children}</a>;
@@ -91,6 +92,8 @@ const LoginSignup = ({ onLogin }) => {
 
 
     return (
+        <>
+        <NavBar />
         <div className='Container' id='Container'> {/* Add active class if registration is successful */}
             {/* Render alert if alertMessage is not null */}
             <div className='Form-container sign-up'>
@@ -154,6 +157,7 @@ const LoginSignup = ({ onLogin }) => {
                 </div>
             </div>
         </div>
+        </>
     );
 }
 

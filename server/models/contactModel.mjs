@@ -1,11 +1,6 @@
 import mongoose from 'mongoose'
 const contactSchema = new mongoose.Schema({
-    _id:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:'User',
-        required:true,
-        required:true
-    },
+    _id:String,
     contact_ids:[{
         type:mongoose.Schema.Types.ObjectId,
         ref:'User'

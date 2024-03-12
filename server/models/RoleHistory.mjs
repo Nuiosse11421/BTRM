@@ -1,11 +1,7 @@
 import mongoose from "mongoose"
 
 const rolehistorySchema = new mongoose.Schema({
-    _id: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
-        required: true,
-    },
+    _id: String,
     roles: {
         IM: Number,
         CO: Number,

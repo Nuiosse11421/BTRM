@@ -1,5 +1,6 @@
 import mongoose from 'mongoose'
 const answerSchema= new mongoose.Schema({
+    _id:String,
     Score:{
         a1: Number, a2: Number, a3: Number, a4: Number, a5: Number, a6: Number, a7: Number,
         b1: Number, b2: Number, b3: Number, b4: Number, b5: Number, b6: Number, b7: Number,

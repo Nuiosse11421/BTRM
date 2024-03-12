@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios'
 import '../components/css/formhide.css'
+import '../components/css/FormComponents.css'
 
 const FormComponent = () => {
   const navigate = useNavigate()
@@ -52,11 +53,11 @@ const FormComponent = () => {
     }
   }
   const handleChange = (event, question) => {
-    const { name, value} = event.target
+    const { name, value } = event.target
     const selectValue = parseInt(value)
-    setFormData(prevFormData =>({
+    setFormData(prevFormData => ({
       ...prevFormData,
-      [name]:selectValue
+      [name]: selectValue
     }))
 
   };
@@ -77,7 +78,7 @@ const FormComponent = () => {
         navigate('/login')
         return
       }
-      await axios.post('http://localhost:8000/form/submitForm', formData,{
+      await axios.post('http://localhost:8000/form/submitForm', formData, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -87,8 +88,8 @@ const FormComponent = () => {
     }
   }
   return (
-    <div>
-      <form id="BelbinForm" onSubmit={handleSubmit}>
+    <>
+      <form className='form-container' id="BelbinForm" onSubmit={handleSubmit}>
         {/*Section Question 1*/}
         <fieldset className="section active" data-index='1'>
           <h3>ตอนที่ 1 การมีส่วนร่วมกับทีม</h3>
@@ -697,14 +698,16 @@ const FormComponent = () => {
         </fieldset>
 
       </form>
-      <button id="prevButton" onClick={prevSection}>Previous</button>
-      <button id="nextButton" onClick={nextSection}>Next</button>
-      <button type="submit" onClick={handleSubmit}>Submit</button>
-      <div className="container-fluid">
-        <div className="text-center" id="total-score-notifications"></div>
+      <div className="prev-next-group">
+        <div className="prev-next">
+          <button className='prev-btn' id="prevButton" onClick={prevSection}>Previous</button>
+          <button className='next-btn' id="nextButton" onClick={nextSection}>Next</button>
+        </div>
+        <div className="submit-btn">
+          <button className='submit-button' type="submit" onClick={handleSubmit}>Submit</button>
+        </div>
       </div>
-    </div>
-  )
+    </>
+  );
 }
-
 export default FormComponent

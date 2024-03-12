@@ -13,8 +13,12 @@ function HomePage() {
         <Link to="/result">
           <button>Go to Result Page</button>
         </Link>
-        <Link to="/login">Login</Link>
-        <Link to="/contact">contact</Link>
+        <Link to="/login">
+          <button>Login</button>
+        </Link>
+        <Link to="/contact">
+          <button>Contact</button>
+        </Link>
       </div>
     </div>
   );

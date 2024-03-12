@@ -19,9 +19,9 @@ const App = () => {
       <Routes>
         <Route path='/login' element={<Login />} />
         <Route path='/' element={<Home/>}/>
-        <Route path='/form' element={loggendIn ? <FormComponent /> : <Navigate to="/login" replace/>}/>
-        <Route path='/formtest' element={loggendIn ? <FormTest /> : <Navigate to="/login" replace/>}/>
-        <Route path='/contact' element={loggendIn ? <ContactManagement /> : <Navigate to="/login" replace/>}/>
+        <Route path='/form' element={ <FormComponent />}/>
+        <Route path='/formtest' element={ <FormTest />}/>
+        <Route path='/contact' element={ <ContactManagement />}/>
         {/* Add more routes here */}
       </Routes>
     </Router>

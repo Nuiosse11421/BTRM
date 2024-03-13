@@ -1,5 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box ;
+}
 
+body{
+  background-color: #E5E0FF;
+  background: linear-gradient(to right, #8EA7E9, #E5E0FF);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+}
 .App {
   text-align: center;
 }

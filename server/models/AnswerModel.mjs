@@ -1,6 +1,5 @@
 import mongoose from 'mongoose'
-const answerSchema= new mongoose.Schema({
-    _id:String,
+const historyAnswer = new mongoose.Schema({
     Score:{
         a1: Number, a2: Number, a3: Number, a4: Number, a5: Number, a6: Number, a7: Number,
         b1: Number, b2: Number, b3: Number, b4: Number, b5: Number, b6: Number, b7: Number,
@@ -13,6 +12,14 @@ const answerSchema= new mongoose.Schema({
         i1: Number, i2: Number, i3: Number, i4: Number, i5: Number, i6: Number, i7: Number,
     },
     timestamp:Date
+},{ _id: false })
+const answerSchema= new mongoose.Schema({
+    _id:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref : 'User',
+    },
+    history:[historyAnswer]
+    
 })
 
 const AnswerModel = mongoose.model('AnswerModel',answerSchema)

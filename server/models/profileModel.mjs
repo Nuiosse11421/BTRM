@@ -1,7 +1,10 @@
 import mongoose from "mongoose"
 
 const profileSchema = new mongoose.Schema({
-  _id: String,
+  _id:{
+    type: mongoose.Schema.Types.ObjectId,
+    ref : 'User',
+},
   firstname: {
     type: String,
     required: true,

@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
 import NavBar from '../components/NavBar';
+import { useGetUserID } from '../hook/useGetUserID';
 
 const FormTest = () => {
+  const userID = useGetUserID()
   const navigate = useNavigate()
   const [formData, setFormData] = useState({
     a1: 0, b1: 0, c1: 0, d1: 0, e1: 0, f1: 0, g1: 0, h1: 0, i1: 0,
@@ -13,7 +15,7 @@ const FormTest = () => {
     a5: 0, b5: 0, c5: 0, d5: 0, e5: 0, f5: 0, g5: 0, h5: 0, i5: 0,
     a6: 0, b6: 0, c6: 0, d6: 0, e6: 0, f6: 0, g6: 0, h6: 0, i6: 0,
     a7: 0, b7: 0, c7: 0, d7: 0, e7: 0, f7: 0, g7: 0, h7: 0, i7: 0,
-});
+  });
   // Define state variables
   const [section, setSection] = useState(1);
   const [scores, setScores] = useState(Array(7 * 9).fill(0));
@@ -34,7 +36,10 @@ const FormTest = () => {
   };
   const handleSubmit = async () => {
     try {
-      const response = await axios.post('http://localhost:8000/api/submit', {formData},{headers:{Authorization: `Bearer ${localStorage.getItem('token')}`}});
+      const response = await axios.post('http://localhost:8000/api/submit', {
+        formData: formData,
+        userID: userID
+      });
       console.log('Form submitted successfully:', response.data);
       alert('Form submitted successfully!');
       navigate('/')
@@ -47,9 +52,9 @@ const FormTest = () => {
   const handleChange = (event, questionIndex, score) => {
     const { name, value } = event.target;
     const selectValue = parseInt(value);
-    setFormData(prevFormData=>({
+    setFormData(prevFormData => ({
       ...prevFormData,
-      [name] : selectValue,
+      [name]: selectValue,
     }))
     console.log(name, selectValue)
     handleScoreChange(questionIndex, score)
@@ -208,7 +213,7 @@ const FormTest = () => {
 
   return (
     <div>
-      <NavBar/>
+      <NavBar />
       {renderForm()}
       <p>Total Score: {calculateSectionScore()}</p>
       <button onClick={handleSubmitWrapper}>Submit</button>

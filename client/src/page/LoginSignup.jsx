@@ -51,14 +51,17 @@ const LoginSignup = () => {
         }
     }
 
-
+    const setchange = () =>{
+        const container = document.getElementById('Container')
+        container.classList.remove('active')
+    }
     const SubmitRegister = async (element) => {
         element.preventDefault();
         try {
+            
             const response = await axios.post('http://localhost:8000/api/register', formData);
             console.log(response.data.message)
-            const container = document.getElementById('Container')
-            container.classList.remove('active')
+            setchange()
         } catch (err) {
             console.error(err);
             if (err.response && err.response.status === 400) {

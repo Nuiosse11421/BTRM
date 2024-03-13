@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios'
 import Logout from '../components/Logout';
+import { useNavigate } from 'react-router-dom';
 
-const FormTest = ({user}) => {
+const FormTest = () => {
+  const navigate = useNavigate()
   const [formData, setFormData] = useState({
     a1: 0, b1: 0, c1: 0, d1: 0, e1: 0, f1: 0, g1: 0, h1: 0, i1: 0,
     a2: 0, b2: 0, c2: 0, d2: 0, e2: 0, f2: 0, g2: 0, h2: 0, i2: 0,
@@ -11,8 +13,7 @@ const FormTest = ({user}) => {
     a5: 0, b5: 0, c5: 0, d5: 0, e5: 0, f5: 0, g5: 0, h5: 0, i5: 0,
     a6: 0, b6: 0, c6: 0, d6: 0, e6: 0, f6: 0, g6: 0, h6: 0, i6: 0,
     a7: 0, b7: 0, c7: 0, d7: 0, e7: 0, f7: 0, g7: 0, h7: 0, i7: 0,
-  });
-
+});
   // Define state variables
   const [section, setSection] = useState(1);
   const [scores, setScores] = useState(Array(7 * 9).fill(0));
@@ -33,13 +34,10 @@ const FormTest = ({user}) => {
   };
   const handleSubmit = async () => {
     try {
-      const response = await axios.post('http://localhost:8000/api/submit', {
-        emails: user.email,
-        Scored: formData,
-        timestamps : new Date()
-      });
-      console.log('Form submitted successfully:', response.Scored);
+      const response = await axios.post('http://localhost:8000/api/submit', {formData},{headers:{Authorization: `Bearer ${localStorage.getItem('token')}`}});
+      console.log('Form submitted successfully:', response.data);
       alert('Form submitted successfully!');
+      navigate('/')
     } catch (err) {
       console.error('Error submitting form:', err);
       alert('Failed to submit form. Please try again later.');
@@ -48,13 +46,12 @@ const FormTest = ({user}) => {
 
   const handleChange = (event, questionIndex, score) => {
     const { name, value } = event.target;
-    const updateName = `${String.fromCharCode(97 + questionIndex)}${section}`
     const selectValue = parseInt(value);
-    setFormData(prevFormData => ({
+    setFormData(prevFormData=>({
       ...prevFormData,
-      [updateName]: selectValue,
-    }));
-    console.log(updateName, selectValue)
+      [name] : selectValue,
+    }))
+    console.log(name, selectValue)
     handleScoreChange(questionIndex, score)
   };
 
@@ -190,7 +187,7 @@ const FormTest = ({user}) => {
                 <label key={score}>
                   <input
                     type="radio"
-                    name={`${String.fromCharCode(64 + index)}${section}`}
+                    name={`${String.fromCharCode(97 + index)}${section}`}
                     value={score}
                     checked={scores[(section - 1) * 9 + index] === score}
                     onChange={(event) => handleChange(event, index, score)}

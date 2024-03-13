@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios'
-import Logout from '../components/Logout';
 import { useNavigate } from 'react-router-dom';
+import NavBar from '../components/NavBar';
 
 const FormTest = () => {
   const navigate = useNavigate()
@@ -208,10 +208,10 @@ const FormTest = () => {
 
   return (
     <div>
+      <NavBar/>
       {renderForm()}
       <p>Total Score: {calculateSectionScore()}</p>
       <button onClick={handleSubmitWrapper}>Submit</button>
-      <Logout/>
     </div>
   );
 };

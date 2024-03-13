@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faFacebook } from '@fortawesome/free-brands-svg-icons';
-import './LoginSignup.css'; // แก้ไขชื่อไฟล์ CSS
+import '../components/css/LoginSignup.css'; // แก้ไขชื่อไฟล์ CSS
 
 function Anchor({ href, children }) {
     return <a href={href}>{children}</a>;

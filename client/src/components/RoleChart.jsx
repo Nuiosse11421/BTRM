@@ -1,5 +1,6 @@
 import React from 'react';
 import RoleScoreChart from './RoleScoreChart';
+import NavBar from './NavBar';
 
 const RoleChart = () => {
   // Sample data for demonstration
@@ -12,6 +13,7 @@ const RoleChart = () => {
 
   return (
     <div>
+      <NavBar/>
       <h1>Role Score Chart</h1>
       <RoleScoreChart data={formData} />
     </div>

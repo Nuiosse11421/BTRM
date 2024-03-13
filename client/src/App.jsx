@@ -1,8 +1,8 @@
 /* eslint-disable react/jsx-no-undef */
 // App.jsx
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, } from 'react-router-dom';
-import LoginSignup from './page/LoginSignup';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import Login from './LoginSignup'
 import Home from './page/HomePage'
 import HomeTest from './page/hometest'
 import FormComponent from './page/FormComponent'

@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from 'axios'
 import '../components/css/formhide.css'
 import '../components/css/FormComponents.css'
+import NavBar from '../components/NavBar';
 
 const FormComponent = () => {
   const navigate = useNavigate()
@@ -89,6 +90,7 @@ const FormComponent = () => {
   }
   return (
     <>
+    <NavBar/>
       <form className='form-container' id="BelbinForm" onSubmit={handleSubmit}>
         {/*Section Question 1*/}
         <fieldset className="section active" data-index='1'>

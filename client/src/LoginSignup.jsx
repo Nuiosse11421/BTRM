@@ -1,18 +1,18 @@
 import React, { useState ,useEffect} from 'react';
 import { useNavigate } from 'react-router-dom'
+import { useCookies } from 'react-cookie'
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 import './LoginSignup.css'; // แก้ไขชื่อไฟล์ CSS
-import NavBar from './components/NavBar';
 
 function Anchor({ href, children }) {
     return <a href={href}>{children}</a>;
 }
 
-const LoginSignup = ({ onLogin }) => {
+const LoginSignup = () => {
     const navigate = useNavigate()
     //Register Data Set
     const [formData, getFormData] = useState({
@@ -38,12 +38,13 @@ const LoginSignup = ({ onLogin }) => {
         const { name, value } = element.target;
         getFormData(prevState => ({ ...prevState, [name]: value }));
     }
-
+    const [_,setCookies]= useCookies('access_token')
     const LoginSB = async (element) => {
         element.preventDefault()
         try {
             const response = await axios.post('http://localhost:8000/api/login', loginD)
-            onLogin(response.data.user, response.data.token);
+            setCookies('access_token', response.data.token)
+            window.localStorage.setItem('userID',response.data.userID)
             navigate('/')
         } catch (err) {
             console.error(err)
@@ -92,8 +93,6 @@ const LoginSignup = ({ onLogin }) => {
 
 
     return (
-        <>
-        <NavBar />
         <div className='Container' id='Container'> {/* Add active class if registration is successful */}
             {/* Render alert if alertMessage is not null */}
             <div className='Form-container sign-up'>
@@ -157,7 +156,6 @@ const LoginSignup = ({ onLogin }) => {
                 </div>
             </div>
         </div>
-        </>
     );
 }
 

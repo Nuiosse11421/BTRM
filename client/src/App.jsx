@@ -8,12 +8,7 @@ import FormComponent from './page/FormComponent'
 import FormTest from './page/formtest'
 import ContactManagement from './components/Contact' 
 
-const isAuthenticated = () => {
-  const token = localStorage.getItem('token')
-  return !!token
-}
 const App = () => {
-  const loggendIn = isAuthenticated()
   return (
     <Router>
       <Routes>
@@ -22,7 +17,6 @@ const App = () => {
         <Route path='/form' element={ <FormComponent />}/>
         <Route path='/formtest' element={ <FormTest />}/>
         <Route path='/contact' element={ <ContactManagement />}/>
-        {/* Add more routes here */}
       </Routes>
     </Router>
   );

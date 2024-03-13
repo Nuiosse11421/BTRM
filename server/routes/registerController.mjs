@@ -2,11 +2,14 @@ import express from 'express'
 import User from '../models/userModel.mjs'
 import Profile from '../models/profileModel.mjs'
 import Contact from '../models/contactModel.mjs'
+import AnswerModel from '../models/AnswerModel.mjs'
+import RoleHistory from '../models/RoleHistory.mjs'
 import bcrypt from 'bcrypt'
 const router = express.Router()
 
 router.post("/register", async (req, res) => {
   const {email, password, firstname, lastname, gender, date_of_birth } = req.body;
+  const lastnames = lastname
   try {
     const user = await User.findOne({email})
 
@@ -19,10 +22,16 @@ router.post("/register", async (req, res) => {
       email: email,
       password:hashedP,
     });
-    const newProfile = await Profile.create({
+    await AnswerModel.create({
+      _id: newUser._id
+    })
+    await RoleHistory.create({
+      _id: newUser._id
+    })
+    await Profile.create({
       _id: newUser._id,
       firstname: firstname,
-      lastname:lastname,
+      lastname:lastnames,
       gender: gender,
       date_of_birth: date_of_birth,
       roles: {
@@ -37,8 +46,8 @@ router.post("/register", async (req, res) => {
         SP: 0
       }
     })
-    const newContact = await Contact.create({ _id: newUser._id, contact_ids: [] });
-    res.status(201).json({ message: "User registered successfully", newUser,newContact,newProfile});
+    await Contact.create({ _id: newUser._id, contact_ids: [] });
+    res.status(201)
   } catch (err) {
     console.error(err.message);
     res.status(500).json({ error: "Internal server error",message:err.message }); 

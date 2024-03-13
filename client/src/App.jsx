@@ -2,7 +2,7 @@
 // App.jsx
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Login from './LoginSignup'
+import Login from './page/LoginSignup'
 import Home from './page/HomePage'
 import FormComponent from './page/FormComponent'
 import FormTest from './page/formtest'

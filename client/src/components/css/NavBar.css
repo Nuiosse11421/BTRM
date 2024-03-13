@@ -1,54 +1,103 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
+
 .header-container {
-  background-color: #333;
-  padding: 10px;
+  background-color: #7286D3;
+  padding: 20px;
   width: 100vw; /* Set width to 100% of viewport width */
   position:fixed;
   top: 0;
   left: 0;
   right: 0;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center; /* Vertically center items */
+  padding: 0px 7%;
+}
+
+.logo{
+  width: 100px;
+  cursor: pointer;
 }
 
 .nav-menu {
   list-style-type: none;
-  margin: 0;
+  margin: 10px 20px;
   padding: 0;
   display: flex;
 }
 
 .nav-menu li {
   display: inline;
-  margin-right: 10px;
+  margin-right: 50px; /* Add margin between items */
 
 }
 
 .nav-menu li:last-child {
-  margin-right: 0;
+  margin-right: 0; /* Remove margin for last item */
 }
 
-.nav-menu li a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.nav-menu li a:hover {
-  text-decoration: underline;
-}
-
+.nav-menu li a,
 .nav-menu li button {
+  color: #E5E0FF;
+  text-decoration: none;
   background-color: transparent;
   border: none;
-  color: #fff;
   cursor: pointer;
   padding: 0;
+  transition: color 0.3s ease; /* Add smooth transition */
 }
 
-.nav-menu li button:hover {
-  text-decoration: underline;
+.nav-menu li a:hover,
+.nav-menu li button:hover,
+.nav-menu li a:focus,
+.nav-menu li button:focus {
+  text-decoration: underline; /* Add visual feedback */
+  color: #E5E0FF; /* Adjust color on hover */
 }
 
-.nav-login{
+.login-login{
   margin-left: auto;
 }
+
+/* New styles to move Profile to the far right */
+.login-login li.profile {
+  margin-left: auto;
+}
+
+.login {
+  list-style-type: none;
+  margin: 10px 20px;
+  padding: 0;
+  display: flex;
+}
+
+.login li {
+  display: inline;
+  margin-right: 20px; /* Add margin between items */
+
+}
+
+.login li:last-child {
+  margin-right: 0; /* Remove margin for last item */
+}
+
+.login li a,
+.login li button {
+  color: #E5E0FF;
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.3s ease; /* Add smooth transition */
+}
+
+.login li a:hover,
+.login li button:hover,
+.login li a:focus,
+.login li button:focus {
+  text-decoration: underline; /* Add visual feedback */
+  color: #E5E0FF; /* Adjust color on hover */
+}
+

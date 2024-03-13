@@ -1,5 +1,6 @@
 import React from 'react';
 import { Line } from 'react-chartjs-2';
+import NavBar from './NavBar';
 
 const RoleScoreChart = ({ data }) => {
   // Check if data is undefined or not an array
@@ -38,6 +39,7 @@ const RoleScoreChart = ({ data }) => {
 
   return (
     <div>
+      <NavBar/>
       <h2>Role Score Chart</h2>
       <Line data={chartData} />
     </div>

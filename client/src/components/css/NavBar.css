@@ -1,94 +1,54 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+.header-container {
+  background-color: #333;
+  padding: 10px;
+  width: 100vw; /* Set width to 100% of viewport width */
+  position:fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+}
 
-/* Navbar container */
-.navbar {
-  list-style: none;
-  padding: 0;
+.nav-menu {
+  list-style-type: none;
   margin: 0;
-  background: #7286D3;
-}
-
-/* Navbar item */
-.navbar-item {
+  padding: 0;
   display: flex;
-  align-items: center;
-  gap: 10px;
-  width: 145px;
-  height: 40px;
-  background: #E5E0FF;
-  border-radius: 10px;
-  padding: 0 15px; /* Adjust padding as needed */
 }
 
-/* Icon styling for navbar items */
-.navbar-icon {
-  width: 20px;
-  height: 20px;
+.nav-menu li {
+  display: inline;
+  margin-right: 10px;
+
 }
 
-/* Text styling for navbar items */
-.navbar-text {
-  font-family: 'Fredoka';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 24px;
-  color: #7286D3;
-  text-decoration: none; /* Remove the line below text */
+.nav-menu li:last-child {
+  margin-right: 0;
 }
 
-
-/* Username info */
-.user-info {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 17px 20px;
-  gap: 26px;
-  width: 246px;
-  height: 113.11px;
-  background: #E5E0FF;
-  border-radius: 10px;
+.nav-menu li a {
+  color: #fff;
+  text-decoration: none;
 }
 
-/* Username text styling */
-.user-info h1, .user-info p {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 24px;
-  color: #7286D3;
-  text-decoration: none; /* Remove the line below text */
+.nav-menu li a:hover {
+  text-decoration: underline;
 }
 
-
-
-/* Logout item */
-.logout-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  width: 145px;
-  height: 40px;
-  background: #E55656;
-  border-radius: 10px;
-  padding: 0 15px; /* Adjust padding as needed */
+.nav-menu li button {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 0;
 }
 
-/* Icon styling for Logout items */
-.logout-icon {
-  width: 20px;
-  height: 20px;
+.nav-menu li button:hover {
+  text-decoration: underline;
 }
 
-/* Text styling for Logout items */
-.logout-text {
-  font-family: 'Fredoka';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 24px;
-  color: #000000;
-  text-decoration: none; /* Remove the line below text */
+.nav-login{
+  margin-left: auto;
 }

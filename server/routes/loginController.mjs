@@ -8,48 +8,30 @@ import mongoose from '../db.mjs'
 
 
 const router = express.Router()
-
+const tokenBlacklist = new Set()
 router.post('/login', async (req, res) => {
-    const { email, password } = req.body
     try {
-        const user = await User.findOne({ email });
-        if (!user) {
-            return res.status(401).json({ error: 'Invalid email or password' });
+        const {email,password} =req.body
+        const user = await User.findOne({email})
+        const hashPassword = await bcrypt.hash(password, 10)
+        if(!user){
+            return res.json({message : "user not found"})
         }
-        const isPasswordValid = await bcrypt.compare(password, user.password);
-        if (!isPasswordValid) {
-            return res.status(401).json({ error: 'Invalid email or password' });
+        const isPassword = await bcrypt.compare(password, hashPassword)
+        if(!isPassword){
+            return res.json({message :'Ivalid email or password'})
         }
-        const profile = await Profile.findOne({_id: user._id })
-        const token = jwt.sign({userId:user._id},'freedome',{expiresIn:'1h'})
-        const { firstname, lastname, gender, date_of_birth } = user;
-        const userData = {
-            _id: user._id,
-            email: user.email,
-            firstname: profile.firstname,
-            lastname:profile.lastname,
-            gender: profile.gender,
-            date_of_birth : profile.date_of_birth,
-        };
+        const token = jwt.sign({id:user._id},'secret')
+        res.json({token,userID:user._id})
+    }catch(err){
 
-        console.log('Login Successful')    
-        res.status(200).json({token,user:userData})
-    } catch (err) {
-        console.error(err.message);
-        res.status(500).json({ err: 'Internal server error' });
     }
 })
 
 router.post('/logout', (req, res) => {
-    req.session.destroy(err => {
-        if (err) {
-            console.error("Error destroying session : ", err)
-            res.status(500).json({ error: 'Failed to logout' })
-        }
-        else {
-            console.log('Logout Succesful')
-            res.status(200).json({ message: "Logout sucessful" })
-        }
-    })
+    const token = req.headers.authorization
+    if(!token){return res.status(401).json({error:'No token provided'})}
+    tokenBlacklist.add(token)
+    res.status(200).json({ message: 'Logged out successfully' });
 })
 export default router

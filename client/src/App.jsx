@@ -2,7 +2,7 @@
 // App.jsx
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Login from './LoginSignup'
+import Login from './page/LoginSignup'
 import Home from './page/HomePage'
 import HomeTest from './page/hometest'
 import FormComponent from './page/FormComponent'
@@ -15,7 +15,7 @@ const App = () => {
     <Router>
       <Routes>
         <Route path='/' element={<Home/>}/>
-        <Route path='/login' element={<LoginSignup/>}/>
+        <Route path='/login' element={<Login/>}/>
         <Route path='/form' element={ <FormTest />}/>
       </Routes>
     </Router>

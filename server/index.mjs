@@ -28,6 +28,7 @@ app.get('/', (req, res) => {
 app.use('/api', registerController)
 app.use('/api', loginCon)
 app.use('/api', formController)
+//http://localhost:8000/api to roleController
 app.use('/api', roleController)
 
 

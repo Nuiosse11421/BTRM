@@ -34,7 +34,7 @@ const RoleCard = () => {
     const sortedRoleArray = Object.entries(roleData).sort((a, b) => b[1] - a[1]);
     if (userID == null) {
         return (
-            <div className="grid-container">
+            <div>
 
                 {Object.values(roleDescription).map(rdt => (
                     <div className="role-area" key={rdt.name}>
@@ -50,10 +50,10 @@ const RoleCard = () => {
             </div>
         )
     }
-const displayRoleDes = sortedRoleArray.map(([roleN]) => {
-    const rdt = roleDescription[roleN]
-    return (
-        <div className="grid-container">
+    const displayRoleDes = sortedRoleArray.map(([roleN]) => {
+        const rdt = roleDescription[roleN]
+        return (
+
             <div className="role-area" key={roleN}>
                 <div className="role-name">
                     {rdt.name}
@@ -69,13 +69,13 @@ const displayRoleDes = sortedRoleArray.map(([roleN]) => {
                         {rdt.surprised}</p>
                 </div>
             </div>
+
+        )
+    })
+    return (
+        <div className="grid-container">
+            {displayRoleDes}
         </div>
     )
-})
-return (
-    <div>
-        {displayRoleDes}
-    </div>
-)
 }
 export default RoleCard

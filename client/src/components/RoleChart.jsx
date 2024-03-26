@@ -1,21 +1,28 @@
-import React from 'react';
-import RoleScoreChart from './RoleScoreChart';
+import React, { useState, useEffect } from 'react';
 import NavBar from './NavBar';
+import { useGetUserID } from '../hook/useGetUserID';
+import axios from 'axios';
 
 const RoleChart = () => {
-  // Sample data for demonstration
-  const formData = [
-    { date: '2024-02-01', role1: [80, 85, 90, 95, 100], role2: [75, 80, 85, 90, 95], role3: [70, 75, 80, 85, 90], role4: [65, 70, 75, 80, 85], role5: [60, 65, 70, 75, 80] },
-    { date: '2024-02-02', role1: [80, 85, 90, 95, 100], role2: [75, 80, 85, 90, 95], role3: [70, 75, 80, 85, 90], role4: [65, 70, 75, 80, 85], role5: [60, 65, 70, 75, 80] },
-    { date: '2024-02-03', role1: [80, 85, 90, 95, 100], role2: [75, 80, 85, 90, 95], role3: [70, 75, 80, 85, 90], role4: [65, 70, 75, 80, 85], role5: [60, 65, 70, 75, 80] },
-    // Add more data entries as needed
-  ];
-
+  const userID = useGetUserID();
+  const [chartData,setChartData]= useState([])
+  useEffect(()=>{
+    const fetchData = async ()=>{
+      try{
+        const response = await axios.get("http://localhost:8000/api/chart-data",{
+          params: {userID}
+        })
+        setChartData(response.data)
+      }catch(err){}
+    }
+    if(userID){
+      fetchData()
+    }
+  },[userID])
   return (
     <div>
-      <NavBar/>
+      <NavBar />
       <h1>Role Score Chart</h1>
-      <RoleScoreChart data={formData} />
     </div>
   );
 };

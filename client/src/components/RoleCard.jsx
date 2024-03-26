@@ -1,38 +1,81 @@
 import React, { useEffect, useState } from "react";
-import NavBar from './NavBar';
 import axios from 'axios'
 import { useGetUserID } from "../hook/useGetUserID";
+import '../components/css/RoleDescription.css'
 const RoleCard = () => {
     const [roleData, setroleData] = useState([])
+    const [roleDescription, setRoleDescription] = useState([])
     const userID = useGetUserID()
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('http://localhost:8000/api/role-card', {
+                const response = await axios.get('http://localhost:8000/api/role-latest', {
                     params: { userID }
                 })
                 setroleData(response.data);
             } catch (err) {
-
             }
         }
         if (userID) {
             fetchData()
         }
     }, [userID])
+    useEffect(() => {
+        const fecthData = async () => {
+            try {
+                const response = await axios.get('http://localhost:8000/api/role-card')
+                setRoleDescription(response.data)
+            } catch (err) {
 
-    return (
-        <div>
-            <NavBar />
-            hello from Role card
-            <ul>
-                {Object.entries(roleData).map(([roleName, roleScore]) => (
-                    <li key={roleName}>
-                        {roleName}: {roleScore}
-                    </li>
+            }
+        }
+        fecthData()
+    }, [])
+    const sortedRoleArray = Object.entries(roleData).sort((a, b) => b[1] - a[1]);
+    if (userID == null) {
+        return (
+            <div className="grid-container">
+
+                {Object.values(roleDescription).map(rdt => (
+                    <div className="role-area" key={rdt.name}>
+                        <div className="role-name">{rdt.name}</div>
+                        <div className="role-detail">
+                            <p>{rdt.description}</p>
+                            <p><span className="heatext">Strengths:</span> {rdt.strengths}</p>
+                            <p><span className="heatext">Allowable weaknesses:</span> {rdt.weeknesses}</p>
+                            <p><span className="heatext">Don't be surprised to find that:</span> {rdt.surprised}</p>
+                        </div>
+                    </div>
                 ))}
-            </ul>
+            </div>
+        )
+    }
+const displayRoleDes = sortedRoleArray.map(([roleN]) => {
+    const rdt = roleDescription[roleN]
+    return (
+        <div className="grid-container">
+            <div className="role-area" key={roleN}>
+                <div className="role-name">
+                    {rdt.name}
+                </div>
+                <div className="role-detail">
+                    <p>{rdt.description}</p>
+                    <p ><span className="heatext">Strengths:</span>
+                        {rdt.strengths}
+                    </p>
+                    <p> <span className="heatext">Allowable weaknesses:</span>
+                        {rdt.weeknesses}</p>
+                    <p ><span className="heatext">Don't be surprised to find that: </span>
+                        {rdt.surprised}</p>
+                </div>
+            </div>
         </div>
     )
+})
+return (
+    <div>
+        {displayRoleDes}
+    </div>
+)
 }
 export default RoleCard

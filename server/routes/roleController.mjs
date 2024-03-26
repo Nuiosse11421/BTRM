@@ -71,26 +71,6 @@ const predefinedRoles = {
         surprised: 'They overload you with information.',
     },
 }
-router.get('/role', async (req, res) => {
-    const { userID } = req.body
-    try {
-        const userId = await userModel.findById(userID)
-        if (!userId) {
-            res.status(404).json({ message: "user not found" })
-        }
-        else if (userId === null) {
-            res.status(404).json({ message: "user =  null" })
-        }
-        const email = userId.email
-        const rolesHis = await RoleHistory.findById(userId)
-        const roleHistory = rolesHis.roles
-        roleHistory.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))
-        res.json({ email, roleHistory })
-    } catch (err) {
-        console.error(err)
-    }
-})
-
 //http://localhost:8000/api/role-latest
 router.get('/role-latest', async (req, res) => {
     try {
@@ -101,6 +81,26 @@ router.get('/role-latest', async (req, res) => {
         }
         const roleProfile = profilefind.roles
         res.json(roleProfile)
+    }
+    catch (err) {
+        console.error(err)
+    }
+})
+
+//http://localhost:8000/api/chart-data
+router.get('/chart-data',async(req,res)=>{
+    try{
+        const { userID } = req.query
+        if(!userID){
+            return res.status(400).json({ error: 'User ID is required' });
+        }
+        const HisRole = await RoleHistory.findOne({_id:userID})
+        const roleHistorys = HisRole.roles
+        const ChartData = roleHistorys.map(entry=>({
+            timestamp:entry.timestamp,
+            roleData:entry.rolesed,
+        }))
+        res.json(ChartData)
     }
     catch (err) {
         console.error(err)

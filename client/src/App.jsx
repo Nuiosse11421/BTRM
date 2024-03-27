@@ -4,11 +4,12 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './page/LoginSignup'
 import Home from './page/HomePage'
-import HomeTest from './page/hometest'
-import FormComponent from './page/FormComponent'
 import FormTest from './page/formtest'
 import ContactManagement from './components/Contact'
+import Profile from './page/Profile';
+import Team from './page/Team';
 import RoleChart from './components/RoleChart';
+import History from './page/History';
 import './App.css'
 
 const App = () => {
@@ -19,6 +20,11 @@ const App = () => {
         <Route path='/login' element={<Login/>}/>
         <Route path='/form' element={ <FormTest />}/>
         <Route path='/chart' element={ <RoleChart />}/>
+        <Route path='/history' element={ <History />}/>
+        <Route path='/contact' element={ <ContactManagement />}/>
+        <Route path='/team' element={ <Team />}/>
+        <Route path='/profile' element={ <Profile />}/>
+
       </Routes>
     </Router>
   );

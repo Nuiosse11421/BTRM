@@ -17,7 +17,6 @@ router.get('/history', async (req, res) => {
 
         res.json({ answerHistory })
     } catch (err) {
-
     }
 })
 

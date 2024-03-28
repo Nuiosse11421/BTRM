@@ -47,7 +47,7 @@ router.post("/register", async (req, res) => {
       }
     })
     await Contact.create({ _id: newUser._id, contact_ids: [] });
-    res.status(201)
+    res.status(201).json({message: "Registered "})
   } catch (err) {
     console.error(err.message);
     res.status(500).json({ error: "Internal server error",message:err.message }); 

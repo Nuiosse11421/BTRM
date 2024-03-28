@@ -14,9 +14,7 @@
     transform: translateX(-50%);
     overflow: auto;
     min-height: 200px; /* Set a minimum height for the container */
-    max-height: 80vh; /* Set a maximum height for the container */
     white-space: nowrap; /* Prevent text from wrapping */
-    word-wrap: break-word; /* Allow breaking long words */
 }
 .headliner{
     color: #7286D3;

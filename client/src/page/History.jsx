@@ -38,12 +38,17 @@ const HistoryPage = () => {
       setDisplayScores(selectedScores);
     }
   }, [selectedTimestamp, selectedScores])
+
+
   const handleTimestampChange = (event) => {
     setSelectedTimestamp(event.target.value);
   };
+
+
   return (
     <div>
       <NavBar />
+      
       <div className='selecttime-section'>
         <p className='timestamp-title'>เลือกช่วงเวลาที่ทำแบบฟอร์ม</p>
         <select className="select-dropdown" onChange={handleTimestampChange} value={selectedTimestamp}>
@@ -53,6 +58,7 @@ const HistoryPage = () => {
             </option>
           ))}
         </select>
+        <button type="submit">Submit</button>
       </div>
       <div className='tableScore-container'>
         <table>

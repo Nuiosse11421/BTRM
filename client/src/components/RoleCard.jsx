@@ -4,7 +4,6 @@ import { useGetUserID } from "../hook/useGetUserID";
 import '../components/css/RoleDescription.css'
 const RoleCard = () => {
     const [roleData, setroleData] = useState([])
-
     const userID = useGetUserID()
     useEffect(() => {
         const fetchData = async () => {
@@ -20,7 +19,7 @@ const RoleCard = () => {
             fetchData()
         }
     }, [userID])
-    
+
     const roleDes = {
         IM: {
             name: 'Implementer',

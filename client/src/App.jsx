@@ -20,15 +20,12 @@ const App = () => {
         <Route path='/login' element={<Login/>}/>
         <Route path='/form' element={ <FormTest />}/>
         <Route path='/chart' element={ <RoleChart />}/>
-<<<<<<< HEAD
         <Route path='/contact' element={ <ContactManagement />}/>
-=======
         <Route path='/history' element={ <History />}/>
         <Route path='/contact' element={ <ContactManagement />}/>
         <Route path='/team' element={ <Team />}/>
         <Route path='/profile' element={ <Profile />}/>
 
->>>>>>> 2468a73199eb55fae111c8039442b00596bc2097
       </Routes>
     </Router>
   );

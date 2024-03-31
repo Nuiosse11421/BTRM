@@ -5,7 +5,7 @@ import { useCookies } from "react-cookie";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faSignOutAlt } from '@fortawesome/free-solid-svg-icons'; // Import the icons you need
 import './css/NavBar.css'; // Import CSS file
-import BTRMlogo from '../mages/BTRMlogo.png';
+import BTRMlogo from '../images/BTRMlogo.png';
 
 const NavBar = () => {
   const navigate = useNavigate();

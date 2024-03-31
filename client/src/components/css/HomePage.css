@@ -1,0 +1,220 @@
+/* HomePage1.css */
+
+body {
+    margin: 0;
+    background-color: #000;
+    color: #eee;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 12px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a.active {
+    background: #7286D3;
+    border-radius: 2px;
+}
+
+/* Slider Section */
+.slider {
+    height: 450px;
+    width: 1000px;
+    margin: auto; /* Center the slider horizontally */
+    overflow: hidden;
+    position: relative;
+}
+
+.slider .list .item {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0 0 0 0;
+    transition: opacity 0.5s;
+    opacity: 0;
+}
+
+.slider .list .item.active {
+    opacity: 1;
+}
+
+.slider .list .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider .list .item .content {
+    position: absolute;
+    top: 10%; /* Adjust top title */
+    width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-right: 30%;
+    box-sizing: border-box;
+    color: #fff;
+    text-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+}
+
+.slider .list .item .content .title,
+.slider .list .item .content .type {
+    font-size: 5em;
+    font-weight: bold;
+    line-height: 1.3em;
+}
+
+/* Button Section */
+.slider .list .item .button {
+    font-size: 2em;
+    font-weight: bold;
+    line-height: 1.3em;
+    display: grid;
+    grid-template-columns: repeat(2, 65px);
+    grid-template-rows: 30px;
+    gap: 5px;
+    margin-top: 20px;
+    color: #fff;
+}
+
+.slider .list .item .button button {
+    width: 60px;/* size background button(link) */
+    height: 30px;
+    border-radius: 10px;
+    background-color: #fff5;
+    border: none;
+    color: #fff;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: bold;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.slider .list .item .button button:hover {
+    background-color: #fff;
+    color: #000;
+    /*letter-spacing: 3px;*/
+}
+
+/*.slider .list .item .button button:nth-child(2) {
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #eee;
+}*/
+
+/* Thumbnail Section */
+.thumbnail {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-20%);
+    z-index: 100;
+    display: flex;
+    gap: 20px;
+}
+
+.thumbnail .item {
+    width: 120px; /* Adjusted thumbnail width */
+    height: 160px; /* Adjusted thumbnail height */
+    flex-shrink: 0;
+    position: relative;
+}
+
+.thumbnail .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
+}
+
+/* nextPrevArrows Section */
+.nextPrevArrows {
+    position: absolute;
+    top: 80%;
+    right: 52%;
+    z-index: 100;
+    width: 300px;
+    max-width: 30%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.nextPrevArrows button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff5;
+    border: none;
+    color: #fff;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: bold;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.nextPrevArrows button:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+/* Animation Part */
+@keyframes showContent {
+    to {
+        transform: translateY(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes showImage {
+    to {
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+}
+
+@keyframes showThumbnail {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes effectNext {
+    from {
+        transform: translateX(150px);
+    }
+}
+
+@keyframes outFrame {
+    to {
+        width: 150px;
+        height: 220px;
+        bottom: 50px;
+        left: 50%;
+        border-radius: 20px;
+    }
+}
+
+@keyframes contentOut {
+    to {
+        transform: translateY(-150px);
+        filter: blur(20px);
+        opacity: 0;
+    }
+}
+
+@media screen and (max-width: 678px) {
+    .slider .list .item .content {
+        padding-right: 0;
+    }
+    .slider .list .item .content .title {
+        font-size: 50px;
+    }
+}
+

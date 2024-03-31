@@ -27,6 +27,11 @@
   display: flex;
 }
 
+.nav-menu a:hover{
+    background: #4e66c6;
+    border-radius: 4px;
+}
+
 .nav-menu li {
   display: inline;
   margin-right: 50px; /* Add margin between items */
@@ -52,7 +57,7 @@
 .nav-menu li button:hover,
 .nav-menu li a:focus,
 .nav-menu li button:focus {
-  text-decoration: underline; /* Add visual feedback */
+  text-decoration: none; /* Add visual feedback */
   color: #E5E0FF; /* Adjust color on hover */
 }
 
@@ -97,7 +102,13 @@
 .login li button:hover,
 .login li a:focus,
 .login li button:focus {
-  text-decoration: underline; /* Add visual feedback */
+  text-decoration: none; /* Add visual feedback */
   color: #E5E0FF; /* Adjust color on hover */
+  width: 60px;/* size background button(link) */
+    height: 30px;
 }
 
+.login a:hover{
+  background: #4e66c6;
+  border-radius: 5px;
+}

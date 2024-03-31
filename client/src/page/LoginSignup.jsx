@@ -139,7 +139,7 @@ const LoginSignup = () => {
                     </div>
                     <span>or use your email password for sign in</span>
                     <input type="email" name="email" placeholder="Email" value={loginD.email} onChange={putData} />
-                    <input type="password" name="password" placeholder="Password" value={loginD.password} onChange={putData} />
+                    <input type="password" name="password" placeholder="Password" value={loginD.password} onChange={putData} required/>
                     <Anchor href="#">Forgot Your Password ?</Anchor>
                     <button type='submit' id='LoginBT'>Sign In</button>
                 </form>

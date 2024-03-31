@@ -26,7 +26,7 @@ router.post('/submit', async (req, res) => {
         })
         await roleHistory.save()
         await answerHistory.save()
-        res.json()
+        res.json({message: "form submitted sucessfully!"})
     } catch (err) {
         console.error(err)
 

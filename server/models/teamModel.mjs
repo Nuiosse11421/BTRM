@@ -1,73 +1,65 @@
-import mongoose from 'mongoose';
-
+import mongoose from 'mongoose'
 const teamSchema = new mongoose.Schema({
-    name: {
-        type: String,
-        required: true
+    teamname:{
+        type:String,
+        required:true,
+        unique:true,
     },
-    creator: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User', // Reference the User model
-        required: true
+    creator:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'User',
+        required:true,
     },
-    members: [{
-        user: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'User' // Reference the User model
-        },
-        status: {
-            type: String,
-            enum: ['pending', 'accepted'],
-            default: 'pending'
-        }
+    members:[{  
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'User',
     }],
-    roles: {
-        IM: Number,
-        CO: Number,
-        SH: Number,
-        PL: Number,
-        RI: Number,
-        ME: Number,
-        TW: Number,
-        CF: Number,
-        SP: Number
+    role:{
+        type:String,
+        enum:['Implementer',
+        'Co-ordinator',
+        'Shaper', 
+        'Plant', 
+        'Resource Investigator', 
+        'Monitor Evaluator', 
+        'Teamworker', 
+        'Completer Finisher', 
+        'Specialist']
+    },
+    rolesummary:{
+        IM:Number,
+        CO:Number,
+        SH:Number,
+        PL:Number,
+        RI:Number,
+        ME:Number,
+        TW:Number,
+        CF:Number,
+        SP:Number
     }
-}, { timestamps: true });
+},{timestamps:true})
 
-teamSchema.methods.calculateAverageScores = function() {
-    let totalScores = {
-        IM: 0,
-        CO: 0,
-        SH: 0,
-        PL: 0,
-        RI: 0,
-        ME: 0,
-        TW: 0,
-        CF: 0,
-        SP: 0
-    };
-
-    let memberCount = 0;
-
-    // Calculate total scores
-    this.members.forEach(member => {
-        if (member.status === 'accepted' && member.user.roles) {
-            memberCount++;
-            Object.keys(member.user.roles).forEach(role => {
-                totalScores[role] += member.user.roles[role];
+teamSchema.pre('save', async function(next) {
+    try {
+        const Profile = mongoose.model('Profile');
+        
+        const members = await Profile.find({ _id: { $in: this.members } });
+        
+        const summary = {
+            IM: 0, CO: 0, SH: 0, PL: 0, RI: 0, ME: 0, TW: 0, CF: 0, SP: 0
+        };
+        members.forEach(member => {
+            Object.keys(member.roles).forEach(role => {
+                summary[role] += member.roles[role];
             });
-        }
-    });
-
-    // Calculate average scores
-    const averageScores = {};
-    Object.keys(totalScores).forEach(role => {
-        averageScores[role] = memberCount > 0 ? totalScores[role] / memberCount : 0;
-    });
-
-    return averageScores;
-};
-
-const Team = mongoose.model('Team', teamSchema);
-
-export default Team;
+        });
+        const memberCount = members.length;
+        Object.keys(summary).forEach(role => {
+            summary[role] /= memberCount;
+        });
+        this.rolesummary = summary;
+        next();
+    } catch (error) {
+        next(error);
+    }
+});

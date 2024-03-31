@@ -62,6 +62,7 @@ const HomePage = () => {
   return (
     <div>
       <NavBar />
+      <div className='home-container'>
       <div className="slider">
         <div className="list">
           {slides.map((slide, index) => (
@@ -90,6 +91,7 @@ const HomePage = () => {
           <button className="prev" onClick={handlePrev}> {'<'} </button>
           <button className="next" onClick={handleNext}> {'>'} </button>
         </div>
+      </div>
       </div>
     </div>
   );

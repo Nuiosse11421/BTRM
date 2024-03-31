@@ -4,6 +4,7 @@ import { Line } from 'react-chartjs-2'
 import Chart from 'chart.js/auto'
 import { useGetUserID } from '../hook/useGetUserID';
 import axios from 'axios';
+import '../components/css/RoleChart.css'
 
 
 const RoleChart = () => {
@@ -84,9 +85,9 @@ const RoleChart = () => {
   return (
     <div>
       <NavBar />
-      <h1>Role Score Chart</h1>
-      <div className=''>
-        <canvas id="myChart" width={800} height={600}></canvas>
+      <h1 className='role-score-chart'>Role Score Chart</h1>
+      <div className='role-chart'>
+        <canvas id="myChart" width={800} height={500}></canvas>
       </div>
     </div>
   );

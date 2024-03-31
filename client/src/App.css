@@ -6,6 +6,7 @@
   box-sizing: border-box;
 }
 body{
+  overflow: auto;
   background-color: #E5E0FF;
   background: linear-gradient(to right, #8EA7E9, #E5E0FF);
   display: flex;

@@ -6,6 +6,7 @@ import registerController from './routes/registerController.mjs'
 import loginCon from './routes/loginController.mjs'
 import formController from './routes/formController.mjs'
 import roleController from './routes/roleController.mjs'
+import historyController from './routes/historyController.mjs'
 
 const app = express()
 
@@ -30,6 +31,7 @@ app.use('/api', loginCon)
 app.use('/api', formController)
 //http://localhost:8000/api to roleController
 app.use('/api', roleController)
+app.use('/api', historyController)
 
 
 

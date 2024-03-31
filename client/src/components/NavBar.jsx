@@ -28,7 +28,7 @@ const NavBar = () => {
         <li><Link to="/form">Form</Link></li>
         <li><Link to="/history">History</Link></li>
         <li><Link to="/contact">Contact</Link></li>
-        <li><Link to="/createteam">Team</Link></li>
+        <li><Link to="/team">Team</Link></li>
       </ul>
 
       <div className="login">

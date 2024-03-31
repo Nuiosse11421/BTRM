@@ -3,6 +3,7 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
 import NavBar from '../components/NavBar';
 import { useGetUserID } from '../hook/useGetUserID';
+import '../components/css/FormComponents.css'
 
 const FormTest = () => {
   const userID = useGetUserID()
@@ -181,16 +182,16 @@ const FormTest = () => {
     ];
 
     return (
-      <div>
-        <h2>ตอนที่ {section}</h2>
-        {sectionNames[section - 1] && <h3>{sectionNames[section - 1].sectionName}</h3>}
+      <div className='form-container'>
+        <h2 className='headliner'>ตอนที่ {section}</h2>
+        {sectionNames[section - 1] && <h3 className='section-name'>{sectionNames[section - 1].sectionName}</h3>}
         {questions[section - 1].map((question, index) => (
-          <div key={index}>
-            <p>{question}</p>
+          <div className='section-question' key={index}>
+            <p className='question'>{question}</p>
             <div>
               {[...Array(11)].map((_, score) => (
-                <label key={score}>
-                  <input
+                <label className='label-point' key={score}>
+                  <input className='radio-input'
                     type="radio"
                     name={`${String.fromCharCode(97 + index)}${section}`}
                     value={score}
@@ -203,8 +204,16 @@ const FormTest = () => {
             </div>
           </div>
         ))}
-        {section > 1 && <button onClick={handlePrevSection}>Previous</button>}
-        {section < 7 && <button onClick={handleNextSection}>Next</button>}
+        <div className='prev-next-group'>
+          <div className='prev-next'>
+            {section > 1 && <button className='prev-btn' onClick={handlePrevSection}>Previous</button>}
+            {section < 7 && <button className='next-btn' onClick={handleNextSection}>Next</button>}
+          </div>
+          <div>
+            <button className='submit-btn' onClick={handleSubmitWrapper}>Submit</button>
+          </div>
+        </div>
+        <p className='total-score'>Total Score: {calculateSectionScore()}</p>
       </div>
     );
   };
@@ -215,8 +224,6 @@ const FormTest = () => {
     <div>
       <NavBar />
       {renderForm()}
-      <p>Total Score: {calculateSectionScore()}</p>
-      <button onClick={handleSubmitWrapper}>Submit</button>
     </div>
   );
 };

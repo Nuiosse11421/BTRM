@@ -99,64 +99,66 @@ const ContactManagement = () => {
     return (
         <>
             <NavBar />
-            <div className="app-container">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores amet incidunt,
-                    mollitia beatae ea eaque quibusdam numquam repellat enim! Reprehenderit?</p>
-                <div className="add-contact">
-                    <h2>Add Contact</h2>
-                    <form onSubmit={handleFormSumbit}>
-                        <input
-                            type="text"
-                            name="name"
-                            placeholder="Enter Name or Email"
-                        />
-                        <button type="submit">
-                            <FontAwesomeIcon icon={faSearch} />
-                        </button>
-                    </form>
-                </div>
-                <div className="contact-list">
-                    <h3>Search Contact List</h3>
-                    <div className="contact-list-details">
-                        {searchedContacts.map((contact, index) => (
-                            <div key={index} className="card">
-                                <div className="card-body">
-                                    <div className="profile-picture">
-                                        <FontAwesomeIcon icon={faUser} />
-                                    </div>
-                                    <div className="contact-details">
-                                        <ul className='contact-details-group'>
-                                            <li><strong>Name: </strong> {contact.firstname + ' ' + contact.lastname}</li>
-                                            <li><strong>Position: </strong> {contact.position}</li>
-                                            <li><strong>Roles Score: </strong></li>
-                                            <li><strong>Email: </strong> {contact.email}</li>
-                                            <li><strong>Gender: </strong>{contact.gender}</li>
-                                            <li><strong>Birthday: </strong>{formatDate(contact.date_of_birth)}</li>
-                                        </ul>
-                                        <div className="card-actions">
-                                            <button className="btn-custom" onClick={() => handleAddContact(contact.email)}>Add</button>
+            <div className="contact-container">
+                <div className="app-container">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores amet incidunt,
+                        mollitia beatae ea eaque quibusdam numquam repellat enim! Reprehenderit?</p>
+                    <div className="add-contact">
+                        <h2>Add Contact</h2>
+                        <form onSubmit={handleFormSumbit}>
+                            <input
+                                type="text"
+                                name="name"
+                                placeholder="Enter Name or Email"
+                            />
+                            <button type="submit">
+                                <FontAwesomeIcon icon={faSearch} />
+                            </button>
+                        </form>
+                    </div>
+                    <div className="contact-list">
+                        <h3>Search Contact List</h3>
+                        <div className="contact-list-details">
+                            {searchedContacts.map((contact, index) => (
+                                <div key={index} className="card">
+                                    <div className="card-body">
+                                        <div className="profile-picture">
+                                            <FontAwesomeIcon icon={faUser} />
                                         </div>
+                                        <div className="contact-details">
+                                            <ul className='contact-details-group'>
+                                                <li><strong>Name: </strong> {contact.firstname + ' ' + contact.lastname}</li>
+                                                <li><strong>Position: </strong> {contact.position}</li>
+                                                <li><strong>Roles Score: </strong></li>
+                                                <li><strong>Email: </strong> {contact.email}</li>
+                                                <li><strong>Gender: </strong>{contact.gender}</li>
+                                                <li><strong>Birthday: </strong>{formatDate(contact.date_of_birth)}</li>
+                                            </ul>
+                                            <div className="card-actions">
+                                                <button className="btn-custom" onClick={() => handleAddContact(contact.email)}>Add</button>
+                                            </div>
 
+                                        </div>
                                     </div>
                                 </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+                <div className='list-contacts'>
+                    <h3>Contact List</h3>
+                    <div>
+                        {contactList.map((contact, index) => (
+                            <div className='contact-list-card' key={index}>
+                                <ul>
+                                    <li><strong>Name: </strong>{contact.firstname + ' ' + contact.lastname}</li>
+                                    <li><strong>Email: </strong>{contact.email}</li>
+                                    <li><strong>Gender: </strong>{contact.gender}</li>
+                                </ul>
+                                <button className='remove-contact' onClick={() => handleRemoveContact(contact.email)}>Remove</button>
                             </div>
                         ))}
                     </div>
-                </div>
-            </div>
-            <div className='list-contacts'>
-                <h3>Contact List</h3>
-                <div>
-                    {contactList.map((contact, index) => (
-                        <div className='contact-list-card' key={index}>
-                            <ul>
-                                <li><strong>Name: </strong>{contact.firstname + ' ' + contact.lastname}</li>
-                                <li><strong>Email: </strong>{contact.email}</li>
-                                <li><strong>Gender: </strong>{contact.gender}</li>
-                            </ul>
-                            <button className='remove-contact' onClick={() => handleRemoveContact(contact.email)}>Remove</button>
-                        </div>
-                    ))}
                 </div>
             </div>
         </>

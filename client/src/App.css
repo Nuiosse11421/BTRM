@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Fredoka';
 }
 body{
   overflow: auto;
@@ -14,6 +15,10 @@ body{
   justify-content: center;
   flex-direction: column;
   height: 100vh;
+}
+header{
+	padding: 15px;
+	text-align: center;
 }
 @keyframes App-logo-spin {
   from {

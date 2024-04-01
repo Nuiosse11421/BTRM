@@ -8,6 +8,8 @@ import formController from './routes/formController.mjs'
 import roleController from './routes/roleController.mjs'
 import historyController from './routes/historyController.mjs'
 import contactController from './routes/contactController.mjs'
+import auth from './routes/authUserController.mjs'
+import team from './routes/teamController.mjs'
 
 const app = express()
 
@@ -34,6 +36,8 @@ app.use('/api', formController)
 app.use('/api', roleController)
 app.use('/api', historyController)
 app.use('/api', contactController)
+app.use('/api', auth)
+app.use('/api', team)
 
 
 

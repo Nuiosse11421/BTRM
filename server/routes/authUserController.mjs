@@ -1,8 +1,20 @@
-const authMiddleware = (req, res, next) => {
-    if (!global.loggedIn) {
-        return res.status(401).json({ message: 'Unauthorized' });
-    }
-    next();
-};
+import express from 'express'
+import Profile from '../models/profileModel.mjs'
 
-export default authMiddleware;
+const router = express.Router()
+
+
+router.get('/get-name',async(req,res)=>{
+    const {userID} = req.query
+    try{
+        const profiles = await Profile.findOne({_id:userID})
+        const name = {
+            currentName : profiles.firstname + ' ' + profiles.lastname
+        }
+        res.json(name)
+    }catch(err){
+
+    }
+})
+
+export default router

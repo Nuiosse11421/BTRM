@@ -38,6 +38,12 @@ const LoginSignup = () => {
         const { name, value } = element.target;
         getFormData(prevState => ({ ...prevState, [name]: value }));
     }
+    const confirmPassword = (element)=>{
+        const {value} = element.target
+        if(value !== formData.password){
+            alert('password does not match')
+        }
+    }
     const [_,setCookies]= useCookies('access_token')
     const LoginSB = async (element) => {
         element.preventDefault()
@@ -112,8 +118,8 @@ const LoginSignup = () => {
                     เช่น input className="input2" ข้างใน Css ก็สามารภทำแบบนี้ได้
                     .input.input2{ข้างในนี้ก็แก้ไข Style}*/}
                     <div className='Form-grid password'>
-                        <input type="password" name="password" placeholder='password' value={formData.password} onChange={dataChange} />
-                        <input type="password" name="c_password" placeholder='Confirm Password' />
+                        <input type="password" name="password" placeholder='password' value={formData.password} minLength={8} onChange={dataChange} />
+                        <input type="password" name="c_password" placeholder='Confirm Password' onChange={confirmPassword} />
                     </div>
                     <div className='Form-grid name'>
                         <input type="text" name='firstname' placeholder='First Name' value={formData.firstname} onChange={dataChange} />

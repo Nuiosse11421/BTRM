@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import NavBar from '../components/NavBar';
 import '../components/css/HomePage.css'; // Import your CSS file
+import RoleCard from '../components/RoleCard';
 
 const HomePage = () => {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -60,40 +61,41 @@ const HomePage = () => {
   }, [activeSlide]);
 
   return (
-    <div>
+    <>
       <NavBar />
       <div className='home-container'>
-      <div className="slider">
-        <div className="list">
-          {slides.map((slide, index) => (
-            <div className={`item ${index === activeSlide ? "active" : ""}`} key={index}>
-              <img src={slide.image} alt={slide.title} />
-              <div className="content">
-                <div className="title">{slide.title}</div>
-                <div className="description">{slide.description}</div>
-                <div className="button">
-                  <Link to={currentLink}>
-                    <button>{slide.title}</button>
-                  </Link>
+        <div className="slider">
+          <div className="list">
+            {slides.map((slide, index) => (
+              <div className={`item ${index === activeSlide ? "active" : ""}`} key={index}>
+                <img src={slide.image} alt={slide.title} />
+                <div className="content">
+                  <div className="title">{slide.title}</div>
+                  <div className="description">{slide.description}</div>
+                  <div className="button">
+                    <Link to={currentLink}>
+                      <button>{slide.title}</button>
+                    </Link>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
-        <div className="thumbnail">
-          {slides.map((slide, index) => (
-            <div className="item" key={index} onClick={() => handleThumbnailClick(index)}>
-              <img src={slide.image} alt={slide.title} />
-            </div>
-          ))}
-        </div>
-        <div className="nextPrevArrows">
-          <button className="prev" onClick={handlePrev}> {'<'} </button>
-          <button className="next" onClick={handleNext}> {'>'} </button>
+            ))}
+          </div>
+          <div className="thumbnail">
+            {slides.map((slide, index) => (
+              <div className="item" key={index} onClick={() => handleThumbnailClick(index)}>
+                <img src={slide.image} alt={slide.title} />
+              </div>
+            ))}
+          </div>
+          <div className="nextPrevArrows">
+            <button className="prev" onClick={handlePrev}> {'<'} </button>
+            <button className="next" onClick={handleNext}> {'>'} </button>
+          </div>
         </div>
       </div>
-      </div>
-    </div>
+      <RoleCard/>
+    </>
   );
 };
 

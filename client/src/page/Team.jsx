@@ -9,15 +9,33 @@ const Team = () => {
     const [showModal, setShowModal] = useState(false);
     const [selectedMembers, setSelectedMembers] = useState([]);
     const [teamName, setTeamName] = useState('');
+    const [teamDetails, setTeamDetails] = useState(null);
 
     useEffect(() => {
         fetchContactList();
     }, [userID]);
+    useEffect(() => {
+        fetchTeamDetails();
+    }, []);
+
+    const fetchTeamDetails = async () => {
+        try {
+            const response = await axios.get('http://localhost:8000/api/team-details', {
+                params: {
+                    creatorId: userID // Use userID as creatorId
+                }
+            });
+            setTeamDetails(response.data);
+        } catch (err) {
+            console.error(err);
+        }
+    };
+    
     const fetchContactList = async () => {
         try {
-            const response = await axios.get('http://localhost:8000/api/contact-list', {
-                params: {
-                    userID: userID
+            const response = await axios.get('http://localhost:8000/api/contact-list',{
+                params:{
+                    userID:userID
                 }
             })
             setContactList(response.data.contacts)
@@ -26,12 +44,11 @@ const Team = () => {
     }
     const handleCreateTeam = async () => {
         try{
-            const response  = await axios.post('http://localhost:8000/api/create-team',{
+            await axios.post('http://localhost:8000/api/create-team',{
                 teamname : teamName,
                 creatorId :userID,
                 memberMail:selectedMembers.map(member=>member.email)
             })
-            console.log("Creating team...");
             setShowModal(false);
         }catch(err){
 
@@ -50,10 +67,22 @@ const Team = () => {
             <NavBar />
             <div className="team-container">
                 <h2>My Team</h2>
-                <div>
-                    <button onClick={() => setShowModal(true)}>Create Team</button>
-                </div>
+                {teamDetails && (
+                    <>
+                        <p>Team Name: {teamDetails.teamname}</p>
+                        <p>Creator: {teamDetails.creator}</p>
+                        <p>Members:</p>
+                        <ul>
+                            {teamDetails.members.map((member, index) => (
+                                <li key={index}>{member.name}</li>
+                            ))}
+                        </ul>
+                    </>
+                )}
+
+                <button onClick={() => setShowModal(true)}>Create Team</button>
             </div>
+
 
             {showModal && (
                 <div className="modal">

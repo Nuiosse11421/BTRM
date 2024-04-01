@@ -56,6 +56,8 @@ const ContactManagement = () => {
             });
 
             alert(response.data.message);
+            const updatedContactList = contactList.filter(contact => contact.email !== contactEmail);
+            setContactList(updatedContactList);
         } catch (err) {
             alert('Maybe you have already this Contact');
         }

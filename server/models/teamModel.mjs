@@ -63,3 +63,6 @@ teamSchema.pre('save', async function(next) {
         next(error);
     }
 });
+
+const Team = mongoose.model('Team',teamSchema)
+export default Team

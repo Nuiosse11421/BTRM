@@ -149,7 +149,7 @@ const ContactManagement = () => {
                     <h3>Contact List</h3>
                     <div>
                         {contactList.map((contact, index) => (
-                            <div className='contact-list-card' key={index}>
+                            <div className='contact-list-card-contactpage' key={index}>
                                 <ul>
                                     <li><strong>Name: </strong>{contact.firstname + ' ' + contact.lastname}</li>
                                     <li><strong>Email: </strong>{contact.email}</li>

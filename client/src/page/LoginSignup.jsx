@@ -1,4 +1,4 @@
-import React, { useState ,useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'
 import { useCookies } from 'react-cookie'
 import axios from 'axios';
@@ -38,33 +38,27 @@ const LoginSignup = () => {
         const { name, value } = element.target;
         getFormData(prevState => ({ ...prevState, [name]: value }));
     }
-    const confirmPassword = (element)=>{
-        const {value} = element.target
-        if(value !== formData.password){
-            alert('password does not match')
-        }
-    }
-    const [_,setCookies]= useCookies('access_token')
+    const [_, setCookies] = useCookies('access_token')
     const LoginSB = async (element) => {
         element.preventDefault()
         try {
             const response = await axios.post('http://localhost:8000/api/login', loginD)
             setCookies('access_token', response.data.token)
-            window.localStorage.setItem('userID',response.data.userID)
+            window.localStorage.setItem('userID', response.data.userID)
             navigate('/')
         } catch (err) {
             console.error(err)
         }
     }
 
-    const setchange = () =>{
+    const setchange = () => {
         const container = document.getElementById('Container')
         container.classList.remove('active')
     }
     const SubmitRegister = async (element) => {
         element.preventDefault();
         try {
-            
+
             const response = await axios.post('http://localhost:8000/api/register', formData);
             console.log(response.data.message)
             setchange()
@@ -119,7 +113,7 @@ const LoginSignup = () => {
                     .input.input2{ข้างในนี้ก็แก้ไข Style}*/}
                     <div className='Form-grid password'>
                         <input type="password" name="password" placeholder='password' value={formData.password} minLength={8} onChange={dataChange} />
-                        <input type="password" name="c_password" placeholder='Confirm Password' onChange={confirmPassword} />
+                        <input type="password" name="c_password" placeholder='Confirm Password' />
                     </div>
                     <div className='Form-grid name'>
                         <input type="text" name='firstname' placeholder='First Name' value={formData.firstname} onChange={dataChange} />
@@ -145,7 +139,7 @@ const LoginSignup = () => {
                     </div>
                     <span>or use your email password for sign in</span>
                     <input type="email" name="email" placeholder="Email" value={loginD.email} onChange={putData} />
-                    <input type="password" name="password" placeholder="Password" value={loginD.password} onChange={putData} required/>
+                    <input type="password" name="password" placeholder="Password" value={loginD.password} onChange={putData} required />
                     <Anchor href="#">Forgot Your Password ?</Anchor>
                     <button type='submit' id='LoginBT'>Sign In</button>
                 </form>

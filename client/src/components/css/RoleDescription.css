@@ -1,21 +1,26 @@
-.grid-container{
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-	margin: 20px auto;
-	gap: 20px;
+.grid-container {
+    display: grid; /* Use CSS Grid layout */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Create grid columns that are at least 300px wide and can expand to fill available space */
+    margin: 20px auto; /* Add margin above and below the grid container, and center horizontally */
+    gap: 20px; /* Set the gap between grid items */
 }
-.role-area{
-    background-color: #f2f2f2; 
-    border: 1px solid #ccc; 
-    border-radius: 5px;
-    padding: 15px;
-    margin: 10px; 
+
+.role-area {
+    background-color: #f2f2f2; /* Set the background color for role areas */
+    border: 1px solid #ccc; /* Add a border around role areas */
+    border-radius: 5px; /* Round the corners of role areas */
+    padding: 15px; /* Add padding inside role areas */
+    margin: 10px; /* Add margin around role areas */
+    border-radius: 10px; /* Make the border of role areas more rounded */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35); /* Add a shadow effect to role areas */
 }
+
 .role-name {
-    font-weight: bold; 
-    text-align: center; 
+    font-weight: bold; /* Make the role name text bold */
+    text-align: center; /* Center align the role name text */
 }
+
 .heatext {
-    color: green; 
-    font-weight: bold; 
+    color: green; /* Set the color of text with class "heatext" to green */
+    font-weight: bold; /* Make text with class "heatext" bold */
 }

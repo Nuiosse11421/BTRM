@@ -1,15 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
-
-
-
-.role-score-chart{
+.role-score-chart {
     font-family: 'Fredoka';
-    color:#455181 ;
-    position: absolute;
-    top: 120px;
+    color: #455181;
     font-size: 30px;
+    position: relative;
+    top: 40px; /* Adjust this value to suit your layout */
 }
-.role-chart{
+
+.role-chart {
     overflow: auto;
     font-family: 'Fredoka';
     background-color: #FFF2F2;
@@ -17,6 +14,6 @@
     border-radius: 20px;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
     position: relative;
-    top: 10%;
-    transform: translateY(80px);
+    top: 20px; /* Reset top value */
+    transform: translateY(30px); /* Adjust this value based on your layout */
 }

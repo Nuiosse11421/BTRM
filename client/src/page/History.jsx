@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import NavBar from '../components/NavBar';
 import { useGetUserID } from '../hook/useGetUserID';
 import axios from 'axios';
-import '../components/css/็History.css';
+import '../components/css/History.css';
 
 const HistoryPage = () => {
   const userID = useGetUserID()

@@ -19,21 +19,22 @@
     align-content: center;
     flex-direction: column;
     width: 1000px;
-    max-width: 100%;
+    max-width: 90%;
     min-height: 450px;
     max-height: 100%;
     padding: 20px;
     margin: 0 auto;
+    right: 20%;
 }
 
 .add-contact h2 {
     margin: 0;
-    position: fixed;
+    position: absolute;
     color: #7286D3;
     text-shadow: 0 10px 10px #E5E0FF;
     font-size: 40px;
     text-align: center;
-    top: 20%;
+    top: 3%;
 }
 
 .app-container p{
@@ -71,7 +72,7 @@
     outline: none;
     cursor: pointer;
     position: absolute;
-    top: 20%;
+    top: 17.7%;
 }
 
 button:hover{
@@ -162,4 +163,67 @@ button:hover{
     background-color: #19af26;
 }
 
+/* ContactList.css */ 
+.list-contacts {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 500px;
+    max-height: 864px;
+    margin: 0 auto;
+    top: 20%; /* Adjust the top position as needed */
+    left: 70%;
+}
+/*.list-contacts h3 {
+    color: #000000;
+    text-shadow: 0 10px 10px #E5E0FF;
+    margin-bottom: 10px;
+    position: absolute;
+    top: -30px; /* Position the h3 element above the .list-contacts *//*
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+} */
 
+.contact-list-card-contactpage {
+    background-color: #E5E0FF;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: calc(100% - 20px);
+    margin: 0 10px 10px 0;
+    width: 300px;
+}
+
+.contact-list-card-contactpage ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.contact-list-card-contactpage ul li {
+    margin: 5px 0;
+}
+
+.remove-contact {
+    background-color: #f21c1c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.remove-contact:hover {
+    background-color: #ba1717;
+}

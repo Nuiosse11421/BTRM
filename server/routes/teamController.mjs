@@ -26,35 +26,65 @@ router.post('/create-team', async (req, res) => {
 //http://localhost:8000/api/team-details
 router.get('/team-details', async (req, res) => {
     try {
-        const {creatorId} = req.query
-        const teamDetails = await Team.findOne({
+        const { userID, teamSelectname } = req.query
+        const team = await Team.findOne({
             $or: [
-                { creator: creatorId },
-                { members: creatorId }
-            ]
-        }).sort({ createdAt: -1 }).populate('creator', 'email').populate({
-            path: 'members',
-            model: 'User',
-            select: 'email'
+                { creator: userID },
+                { members: { $in: [userID] } }
+            ],
+            teamname: teamSelectname
         });
-
-        if (!teamDetails) {
-            return res.status(404).json({ message: "Team not found" });
+        if (!team) {
+            return res.status(404).json({ message: 'Team not found' })
         }
+        const crInfo = team.creator
+        const Creator = await User.findById(crInfo._id)
+        const creatorProfile = await Profile.findById(Creator._id)
+        const formattedMembers = []
+        for (const member of team.members) {
+            const profile = await Profile.findOne({ _id: member._id })
+            const usermem = await User.findOne({ _id: profile._id })
+            const emails = usermem.email
+            formattedMembers.push({
+                email: emails,
+                name: profile.firstname + " " + profile.lastname
+            })
+        }
+        const formattedCreator = [
+        ]
+        formattedCreator.push({
+            email: Creator.email,
+            name: creatorProfile.firstname + " " + creatorProfile.lastname
+        })
 
-        const formattedTeamDetails = {
-            rolesummary: teamDetails.rolesummary,
-            teamname: teamDetails.teamname,
-            creator: teamDetails.creator.email,
-            members: teamDetails.members.map(member => ({
-                email: member.email,
-                name: member.firstname + ' ' + member.lastname
-            }))
-        };
-        res.json(formattedTeamDetails);
+        const TeamData = {
+            teamname: team.teamname,
+            creator: formattedCreator,
+            members: formattedMembers,
+            roles: team.rolesummary
+        }
+        res.status(200).json({ TeamData })
+
     } catch (err) {
         console.error(err);
         res.status(500).json({ message: "Failed to fetch team details" });
+    }
+})
+router.get('/team-list', async (req, res) => {
+    try {
+        const { userID } = req.query
+        const teams = await Team.find(
+            { $or: [{ creator: userID }, { members: userID }] },
+            { teamname: 1, members: 1, creator: 1 }
+        )
+        const teamsWithMemberCount = teams.map(team => ({
+            teamname: team.teamname,
+            memberCount: team.members.length + 1
+        }))
+        res.status(200).json({ teams: teamsWithMemberCount })
+    } catch (err) {
+        console.error(err)
+        res.status(500).json({ message: "Failed to fetch team list" })
     }
 })
 

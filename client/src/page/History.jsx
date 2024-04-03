@@ -54,13 +54,13 @@ const HistoryPage = () => {
       <div className='selecttime-section'>
         <p className='timestamp-title'>เลือกช่วงเวลาที่ทำแบบฟอร์ม</p>
         <select className="select-dropdown" onChange={handleTimestampChange} value={selectedTimestamp}>
+          <option> Select Your times</option>
           {times.map((item, index) => (
             <option key={index} value={item.timestamp}>
               {item.timestamp}
             </option>
           ))}
         </select>
-        <button type="submit">Submit</button>
       </div>
       <div className='tableScore-container'>
         <table>

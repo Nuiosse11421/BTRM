@@ -29,9 +29,24 @@
     overflow-x: auto;
 }
 
+/* Add this CSS to set fixed width for each column */
+td[id^="a"],
+td[id^="b"],
+td[id^="c"],
+td[id^="d"],
+td[id^="e"],
+td[id^="f"],
+td[id^="g"],
+td[id^="h"],
+td[id^="i"] {
+    width: 50px; /* Adjust the width as per your preference */
+}
+
+/* Update existing CSS */
 table {
     border-collapse: collapse;
-    width: 100%;
+    width: auto; /* Change width to auto to allow table to expand based on column widths */
+    table-layout: fixed; /* Fixed layout so that the columns have equal width */
 }
 
 th,
@@ -39,6 +54,8 @@ td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: center;
+    white-space: nowrap; /* Prevent wrapping of content */
+    overflow: hidden; /* Hide overflow content */
 }
 
 th {

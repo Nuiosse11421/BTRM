@@ -1,13 +1,19 @@
-/* HomePage1.css */
+/* HomePage.css */
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
 
 
-.home-container {
-    margin: 0;
+/*.home-container {
     background-color: #000;
     color: #eee;
     font-family: 'Fredoka', sans-serif;
     font-size: 12px;
+    height: 450px;
+    width: 1000px;
+}*/
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 a {
@@ -21,11 +27,18 @@ a.active {
 
 /* Slider Section */
 .slider {
+    top: 0%; /* Adjust top title */
     height: 450px;
     width: 1000px;
     margin: auto; /* Center the slider horizontally */
     overflow: hidden;
-    position: relative;
+    position: absolute; /* Change position to absolute */
+    bottom: 0; /* Position the slider at the bottom */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+}
+.role-card-container {
+    margin-top: 140%; /* Adjust as needed(ปรับเพื่อให้มาอยู่ด้านล่าง .slider) */
 }
 
 .slider .list .item {
@@ -67,12 +80,12 @@ a.active {
 }
 
 /* Button Section */
-.slider .list .item .button {
+.slider .list .item .button{
     font-size: 2em;
     font-weight: bold;
     line-height: 1.3em;
     display: grid;
-    grid-template-columns: repeat(2, 65px);
+    grid-template-columns: repeat(2, 60px);
     grid-template-rows: 30px;
     gap: 5px;
     margin-top: 20px;
@@ -108,7 +121,7 @@ a.active {
 .thumbnail {
     position: absolute;
     bottom: 30px;
-    left: 50%;
+    left: 45%;
     transform: translateX(-20%);
     z-index: 100;
     display: flex;
@@ -134,7 +147,7 @@ a.active {
 .nextPrevArrows {
     position: absolute;
     top: 80%;
-    right: 52%;
+    right: 58%;
     z-index: 100;
     width: 300px;
     max-width: 30%;
@@ -220,3 +233,5 @@ a.active {
     }
 }
 
+/* Import RoleDescription.css below the .slider section */
+@import url('../css/RoleDescription.css');

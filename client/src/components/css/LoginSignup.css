@@ -84,6 +84,7 @@
     transition: all 0.6s ease-in-out;
 
 }
+
 .sign-in{
     left: 0;
     width: 50%;
@@ -115,7 +116,15 @@
         z-index: 5;
     }  
 }
-.Social-icons{
+.sign-in-logo{
+    width: 80px;
+    height: 100px;
+    position: absolute;
+    top: 20px;
+    margin: 10px 0 ;
+    left: 30%;
+  }
+/*.Social-icons{
     margin: 20px 0 ;
 }
 .Social-icons .icon{
@@ -128,7 +137,7 @@
     padding: 3px;
     width: 30px;
     height: 30px;
-}
+}*/
 .Toggle-container{
     position: absolute;
     top: 0;

@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'
 import { useCookies } from 'react-cookie'
 import axios from 'axios';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGoogle } from '@fortawesome/free-brands-svg-icons';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faFacebook } from '@fortawesome/free-brands-svg-icons';
-import '../components/css/LoginSignup.css'; // แก้ไขชื่อไฟล์ CSS
+//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+//import { faGoogle } from '@fortawesome/free-brands-svg-icons';
+//import { faGithub } from '@fortawesome/free-brands-svg-icons';
+//import { faFacebook } from '@fortawesome/free-brands-svg-icons';
+import '../components/css/LoginSignup.css'; // แก้ไขชื่อไฟล์ 
+import BTRMlogo from '../images/BTRMlogo.png';
 
 function Anchor({ href, children }) {
     return <a href={href}>{children}</a>;
@@ -100,12 +101,13 @@ const LoginSignup = () => {
             {/* Render alert if alertMessage is not null */}
             <div className='Form-container sign-up'>
                 <form id='regFrom' onSubmit={SubmitRegister}>
+                    {/*<img src={BTRMlogo} alt="" className='logo'/>*/}
                     <h1>Create Account</h1>
-                    <div className="Social-icons">
+                    {/*<div className="Social-icons">
                         <FontAwesomeIcon icon={faGoogle} className="icon" />
                         <FontAwesomeIcon icon={faGithub} className="icon" />
                         <FontAwesomeIcon icon={faFacebook} className="icon" />
-                    </div>
+                    </div>*/}
                     <span>or use your email for registered</span>
                     <input type="email" name="email" placeholder='Email' value={formData.email} onChange={dataChange} />
                     {/*แก้ไข Style ให้ First และ lastname อยู้ในบรรทัดเดียวกัน ถ้าแนะนำให้ใช้ Classname ช่วยในการ Edit 
@@ -131,12 +133,13 @@ const LoginSignup = () => {
             </div>
             <div className='Form-container sign-in'>
                 <form id='loForm' onSubmit={LoginSB}>
+                    <img src={BTRMlogo} alt="" className='logo'/>
                     <h1>Sign In</h1>
-                    <div className="Social-icons">
+                    {/*<div className="Social-icons">
                         <FontAwesomeIcon icon={faGoogle} className="icon" />
                         <FontAwesomeIcon icon={faGithub} className="icon" />
                         <FontAwesomeIcon icon={faFacebook} className="icon" />
-                    </div>
+                    </div>*/}
                     <span>or use your email password for sign in</span>
                     <input type="email" name="email" placeholder="Email" value={loginD.email} onChange={putData} />
                     <input type="password" name="password" placeholder="Password" value={loginD.password} onChange={putData} required />

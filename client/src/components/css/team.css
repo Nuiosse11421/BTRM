@@ -151,9 +151,9 @@
   cursor: pointer;
 }
 
-.radar-chart-container {
-  margin-top: 80%;
-  width: 800px;
+.radar-chart-container{
+  margin-top: 110%;
+  width: 600px;
   height: 600px;
   background-color: #FFF2F2;
   border-radius: 8px;

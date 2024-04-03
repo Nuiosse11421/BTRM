@@ -76,7 +76,7 @@ const RoleChart = () => {
     return (
       <div>
 
-        <h1>Loading...</h1>
+        <h1>Please Login to access the Chart Page.</h1>
       </div>
     );
   }

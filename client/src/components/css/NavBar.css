@@ -30,7 +30,7 @@
 
 .nav-menu a:hover {
   background: #4e66c6;
-  border-radius: 15px;
+  border-radius: 10px;
 }
 
 .nav-menu li {
@@ -52,7 +52,8 @@
   color: #fff;
 }
 
-.login {
+.login,
+.login button {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -69,7 +70,7 @@
 }
 
 .login li a,
-.login li button {
+.login button {
   color: #e5e0ff;
   text-decoration: none;
   background-color: transparent;
@@ -80,11 +81,12 @@
 }
 
 .login li a:hover,
-.login li button:hover {
+.login button:hover {
   color: #fff;
 }
 
-.login a:hover {
+.login a:hover,
+.login button:hover {
   background: #4e66c6;
-  border-radius: 15px;
+  border-radius: 10px;
 }

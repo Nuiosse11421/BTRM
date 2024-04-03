@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import NavBar from '../components/NavBar';
 import '../components/css/HomePage.css'; // Import your CSS file
 import RoleCard from '../components/RoleCard';
+import '../components/css/RoleDescription.css';
 
 const HomePage = () => {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -61,7 +62,7 @@ const HomePage = () => {
   }, [activeSlide]);
 
   return (
-    <>
+    <div>
       <NavBar />
       <div className='home-container'>
         <div className="slider">
@@ -94,8 +95,10 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-      <RoleCard/>
-    </>
+      <div className="role-card-container">
+        <RoleCard/>
+      </div>
+    </div>
   );
 };
 

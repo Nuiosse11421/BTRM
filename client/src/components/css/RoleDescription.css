@@ -6,9 +6,7 @@
 }
 
 .role-area {
-    background-color: #f2f2f2; /* Set the background color for role areas */
-    border: 1px solid #ccc; /* Add a border around role areas */
-    border-radius: 5px; /* Round the corners of role areas */
+    
     padding: 15px; /* Add padding inside role areas */
     margin: 10px; /* Add margin around role areas */
     border-radius: 10px; /* Make the border of role areas more rounded */
@@ -23,4 +21,41 @@
 .heatext {
     color: green; /* Set the color of text with class "heatext" to green */
     font-weight: bold; /* Make text with class "heatext" bold */
+}
+
+/* Background colors for each role */
+.role-area.IM {
+    background-color: #FF5733; /* Implementer */
+}
+
+.role-area.CO {
+    background-color: #33FF57; /* Co-ordinator */
+}
+
+.role-area.SH {
+    background-color: #337AFF; /* Shaper */
+}
+
+.role-area.PL {
+    background-color: #33FFAB; /* Plant */
+}
+
+.role-area.RI {
+    background-color: #FF33E9; /* Resource Investigator */
+}
+
+.role-area.ME {
+    background-color: #FF9D33; /* Monitor Evaluator */
+}
+
+.role-area.TW {
+    background-color: #8C33FF; /* Teamworker */
+}
+
+.role-area.CF {
+    background-color: #FF3333; /* Completer Finisher */
+}
+
+.role-area.SP {
+    background-color: #33FF9D; /* Specialist */
 }

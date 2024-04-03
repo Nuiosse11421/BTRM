@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
 
+.body-container{
+    overflow: auto;
+    background-color: #E5E0FF;
+    background: linear-gradient(to right, #8EA7E9, #E5E0FF);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
 .Container{
     font-family: 'Fredoka';
     background-color: #FFF2F2;
@@ -123,7 +134,7 @@
     top: 20px;
     margin: 10px 0 ;
     left: 30%;
-  }
+}
 /*.Social-icons{
     margin: 20px 0 ;
 }

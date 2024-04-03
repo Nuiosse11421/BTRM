@@ -1,5 +1,7 @@
 /* HomePage.css */
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+/* Import RoleDescription.css */
+@import url('../css/RoleDescription.css');
 
 
 /*.home-container {
@@ -36,9 +38,19 @@ a.active {
     bottom: 0; /* Position the slider at the bottom */
     left: 50%; /* Center horizontally */
     transform: translateX(-50%); /* Center horizontally */
+    border-radius: 10px;
 }
+/* Role Card Container */
 .role-card-container {
-    margin-top: 140%; /* Adjust as needed(ปรับเพื่อให้มาอยู่ด้านล่าง .slider) */
+    margin-top: 40%; /* Adjust margin top as needed */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjust role card width */
+    grid-gap: 20px; /* Adjust gap between role cards */
+    justify-content: center; /* Center align role cards horizontally */
+}
+/* Role Card Styling */
+.role-card-container .role-area {
+    width: 100%; /* Ensure role card takes full width */
 }
 
 .slider .list .item {
@@ -236,5 +248,3 @@ a.active {
     }
 }
 
-/* Import RoleDescription.css below the .slider section */
-@import url('../css/RoleDescription.css');

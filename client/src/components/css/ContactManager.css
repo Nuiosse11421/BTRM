@@ -9,7 +9,7 @@
     height: 100vh;
     margin: 0;
 }
-.app-container{
+.app-container {
     position: relative;
     background-color: #FFF2F2;
     border-radius: 20px;
@@ -18,14 +18,16 @@
     justify-content: center;
     align-content: center;
     flex-direction: column;
-    width: 1000px;
-    max-width: 90%;
-    min-height: 450px;
+    width: 100%; /* Adjusted width */
+    max-width: 900px; /* Adjusted max-width */
+    min-height: 500px;
     max-height: 100%;
-    padding: 20px;
+    padding: 30px; /* Adjusted padding */
     margin: 0 auto;
-    right: 20%;
+    right: 15%;
+    margin-top: 8.5%;
 }
+
 
 .add-contact h2 {
     margin: 0;
@@ -66,7 +68,7 @@
     border: none;
     width: 50px;
     height: 30px;
-    border-radius: 5px;
+    border-radius: 10px;
     margin-left: 220px;
     background-color: #7286D3;
     outline: none;
@@ -152,15 +154,15 @@ button:hover{
     justify-content: flex-end;
     display: flex;
     padding: 5px 10px;
-    background-color: #0e7516;
+    background-color: #19af26;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
 }
 
 .btn-custom:hover {
-    background-color: #19af26;
+    background-color: #0e7516;
 }
 
 /* ContactList.css */ 
@@ -219,7 +221,7 @@ button:hover{
     background-color: #f21c1c;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 5px 10px;
     cursor: pointer;
 }

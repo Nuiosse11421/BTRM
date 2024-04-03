@@ -2,11 +2,12 @@
     display: grid; /* Use CSS Grid layout */
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Create grid columns that are at least 300px wide and can expand to fill available space */
     margin: 20px auto; /* Add margin above and below the grid container, and center horizontally */
-    gap: 20px; /* Set the gap between grid items */
+    gap: 30px; /* Set the gap between grid items */
+    
 }
 
 .role-area {
-    
+    background-color: #ffffff;
     padding: 15px; /* Add padding inside role areas */
     margin: 10px; /* Add margin around role areas */
     border-radius: 10px; /* Make the border of role areas more rounded */

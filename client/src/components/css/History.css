@@ -1,6 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
+/* Wrap the content in a container div */
+.history-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.timestamp-title,
+.select-dropdown,
+.tableScore-container {
+    margin-top: 8%; /* Adjust the margin as needed */
+}
 
 .selecttime-section {
     margin: 20px auto;
@@ -21,12 +34,16 @@
     outline: none ;
     background-color: #E5E0FF;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
+    margin-top: 1%;
 }
 
 .tableScore-container {
-    margin: 20px auto;
+    margin: 50px auto;
     overflow-x: auto;
+    width: 80%; /* Adjust the width as needed */
+    max-width: 1200px; /* Set a maximum width if necessary */
+    margin-left: 33%; /* Adjust the left margin as needed */
 }
 
 /* Add this CSS to set fixed width for each column */

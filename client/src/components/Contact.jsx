@@ -103,8 +103,7 @@ const ContactManagement = () => {
             <NavBar />
             <div className="contact-container">
                 <div className="app-container">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores amet incidunt,
-                        mollitia beatae ea eaque quibusdam numquam repellat enim! Reprehenderit?</p>
+                    <p>You can enter the names or email of people you know.</p>
                     <div className="add-contact">
                         <h2>Add Contact</h2>
                         <form onSubmit={handleFormSumbit}>

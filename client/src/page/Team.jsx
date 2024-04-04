@@ -109,7 +109,7 @@ const Team = () => {
         }
     };
     const generateRadarChart = (teamData) => {
-        if (!teamData || !teamData.roles) return;
+        
 
         const ctx = document.getElementById('radarChart');
 

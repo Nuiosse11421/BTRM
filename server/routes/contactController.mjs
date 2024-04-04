@@ -13,15 +13,16 @@ router.get('/search-profile', async (req, res) => {
         let profiles = [], emailContact = []
         const searchParts = search.split(" ");
         const firstName = searchParts[0];
+        let userContact; // Define userContact variable
         if (isValidEmail(firstName)) {
-            const userContact = await User.findOne({ email: firstName })
+            userContact = await User.findOne({ email: firstName })
             if (userContact) {
                 if (userID && userContact._id.toString() === userID) {
                     return res.json({ contacts: [] })
                 }
                 const profile = await Profile.findById(userContact._id)
                 profiles.push(profile)
-                emailContact = userContact.email
+                emailContact.push(userContact.email) // Push email here
             } else {
                 console.error('User not found by email')
                 return res.json({ contacts: [] })
@@ -33,12 +34,12 @@ router.get('/search-profile', async (req, res) => {
                 return res.json({ contacts: [] })
             }
             for (const profile of profiles) {
-                const userContact = await User.findById(profile._id)
-                emailContact.push(userContact.email)
+                userContact = await User.findById(profile._id)
+                emailContact.push(userContact.email) // Push email here
             }
         }
         const contacts = profiles.map((profile, index) => ({
-            email: emailContact[index],
+            email: emailContact[index], // Use email from emailContact array
             firstname: profile.firstname,
             lastname: profile.lastname,
             gender: profile.gender,

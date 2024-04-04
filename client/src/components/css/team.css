@@ -49,11 +49,12 @@
 
 /* Styles for .custom-button */
 .custom-button {
-  background-color: #5574c7;
+  background-color: #7286D3;
   color: white;
   border: none;
-  padding: 10px 0px;
-  border-radius: 10px;
+  font-size: 1.3em;
+  padding: 15px 15px;
+  border-radius: 20px;
   cursor: pointer;
   margin-top: -4%;
   position: absolute;
@@ -81,7 +82,7 @@
 }
 
 .team-list-container button {
-  background-color: #007bff;
+  background-color: #7286D3;
   color: white;
   border: none;
   padding: 5px 10px;
@@ -151,7 +152,7 @@
 }
 
 .contact-list-card-teampage ul li.emaildetail {
-  color: #007bff; /* Blue color for email */
+  color: #007bffa9; /* Blue color for email */
 }
 
 .contact-list-card-teampage ul li.genderdetail {
@@ -183,19 +184,19 @@
 }
 /*remove member*/
 .button-remove{
-  background-color: #f21c1c;
+  background-color: #ba1717;
   margin-left: 10px;
 }
 .button-remove:hover {
-  background-color: #ba1717;
+  background-color: #f21c1c;
 }
 /*add member*/
 .button-add{
-  background-color: #19af26;
+  background-color: #0e7516;
   margin-left: 10px;
 }
 .button-add:hover {
-  background-color: #0e7516;
+  background-color: #19af26;
 }
 
 .close {

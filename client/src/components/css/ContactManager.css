@@ -154,7 +154,7 @@ button:hover{
     justify-content: flex-end;
     display: flex;
     padding: 5px 10px;
-    background-color: #19af26;
+    background-color: #0e7516;
     color: white;
     border: none;
     border-radius: 10px;
@@ -162,7 +162,7 @@ button:hover{
 }
 
 .btn-custom:hover {
-    background-color: #0e7516;
+    background-color: #19af26;
 }
 
 /* ContactList.css */ 
@@ -218,7 +218,7 @@ button:hover{
 }
 
 .remove-contact {
-    background-color: #f21c1c;
+    background-color: #ba1717;
     color: white;
     border: none;
     border-radius: 10px;
@@ -227,5 +227,5 @@ button:hover{
 }
 
 .remove-contact:hover {
-    background-color: #ba1717;
+    background-color: #f21c1c;
 }

@@ -21,9 +21,12 @@
 }
 
 .timestamp-title {
-    font-family: 'Kanit';
-    font-size: 20px;
+    font-style: bold;
     margin-bottom: 10px;
+    font-family: 'Fredoka';
+    color: #455181;
+    font-size: 30px;
+    position: relative;
 }
 
 .select-dropdown {
@@ -61,7 +64,9 @@ td[id^="f"],
 td[id^="g"],
 td[id^="h"],
 td[id^="i"] {
-    width: 50px; /* Adjust the width as per your preference */
+    
+    width: 60px; /* Adjust the width as per your preference */
+    height: 40px;
 }
 
 /* Update existing CSS */
@@ -76,7 +81,7 @@ table {
 th,
 td {
     border: 1px solid #ddd;
-    padding: 8px;
+    padding: 10px;
     text-align: center;
     white-space: nowrap; /* Prevent wrapping of content */
     overflow: hidden; /* Hide overflow content */

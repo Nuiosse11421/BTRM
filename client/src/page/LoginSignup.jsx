@@ -62,6 +62,7 @@ const LoginSignup = () => {
 
             const response = await axios.post('http://localhost:8000/api/register', formData);
             console.log(response.data.message)
+            alert('Register Sucessfully')
             setchange()
         } catch (err) {
             console.error(err);

@@ -52,7 +52,7 @@ const HistoryPage = () => {
       <NavBar />
       
       <div className='selecttime-section'>
-        <p className='timestamp-title'>เลือกช่วงเวลาที่ทำแบบฟอร์ม</p>
+        <h2 className='timestamp-title'>Choose the time period for making the form</h2>
         <select className="select-dropdown" onChange={handleTimestampChange} value={selectedTimestamp}>
           <option> Select Your times</option>
           {times.map((item, index) => (

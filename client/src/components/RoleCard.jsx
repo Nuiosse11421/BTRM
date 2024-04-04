@@ -88,7 +88,7 @@ const RoleCard = () => {
     const sortedRoleArray = Object.entries(roleData).sort((a, b) => b[1] - a[1]);
     if (userID == null) {
         return (
-            <div>
+            <div className="grid-container">
 
                 {Object.values(roleDes).map(rdt => (
                     <div className="role-area" key={rdt.name}>

@@ -108,7 +108,7 @@ const RoleCard = () => {
         const rdt = roleDes[roleN]
         return (
 
-            <div className="role-area" key={roleN}>
+            <div className={`role-area ${roleN}`} key={roleN}>
                 <div className="role-name">
                     {rdt.name}
                 </div>

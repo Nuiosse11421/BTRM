@@ -205,7 +205,7 @@ const Team = () => {
 
                     </div>
                 </div>
-                <button onClick={() => setShowModal(true)}>Create Team</button>
+                <button className="custom-button" onClick={() => setShowModal(true)}>Create Team</button>
 
                 {showModal && (
                     <div className="modal">
@@ -226,7 +226,7 @@ const Team = () => {
                                 {selectedMembers.map((member, index) => (
                                     <div key={index}>
                                         {member.firstname} {member.lastname}
-                                        <button onClick={() => handleRemoveMember(member)}>Remove</button>
+                                        <button className="button-remove" onClick={() => handleRemoveMember(member)}>Remove</button>
                                     </div>
                                 ))}
                             </div>
@@ -238,7 +238,7 @@ const Team = () => {
                                             <li className="namedetail"><strong>Name: </strong>{contact.firstname + ' ' + contact.lastname}</li>
                                             <li className="emaildetail"><strong>Email: </strong>{contact.email}</li>
                                             <li className="genderdetail"><strong>Gender: </strong>{contact.gender}</li>
-                                            <button onClick={() => handleAddMember(contact)}>Add to Team</button>
+                                            <button className="button-add" onClick={() => handleAddMember(contact)}>Add to Team</button>
                                         </ul>
                                     </div>
                                 ))}

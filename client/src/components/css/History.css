@@ -39,12 +39,17 @@
 }
 
 .tableScore-container {
-    margin: 50px auto;
-    overflow-x: auto;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
     width: 80%; /* Adjust the width as needed */
     max-width: 1200px; /* Set a maximum width if necessary */
-    margin-left: 33%; /* Adjust the left margin as needed */
+    display: flex;
+    justify-content: center; 
+    align-items: center;
 }
+
 
 /* Add this CSS to set fixed width for each column */
 td[id^="a"],
@@ -64,6 +69,8 @@ table {
     border-collapse: collapse;
     width: auto; /* Change width to auto to allow table to expand based on column widths */
     table-layout: fixed; /* Fixed layout so that the columns have equal width */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
+    border-radius: 20px;
 }
 
 th,

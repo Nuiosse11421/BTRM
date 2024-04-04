@@ -38,7 +38,8 @@ a.active {
     bottom: 0; /* Position the slider at the bottom */
     left: 50%; /* Center horizontally */
     transform: translateX(-50%); /* Center horizontally */
-    border-radius: 10px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
 }
 /* Role Card Container */
 .role-card-container {
@@ -80,15 +81,21 @@ a.active {
     transform: translateX(-50%);
     padding-right: 30%;
     box-sizing: border-box;
-    color: #fff;
-    text-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+    color: #ffffff;
+    
 }
 
-.slider .list .item .content .title,
-.slider .list .item .content .type {
+.slider .list .item .content .title {
     font-size: 5em;
     font-weight: bold;
     line-height: 1.3em;
+    text-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+}
+.slider .list .item .content .description{
+    font-size: 1.3em;
+    font-weight: bold;
+    line-height: 1.3em;
+    text-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
 }
 
 /* Button Section */
@@ -117,6 +124,8 @@ a.active {
     transition: 0.5s;
     cursor: pointer;
     padding: 0px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
+    border-radius: 10px;
 }
 
 .slider .list .item .button button:hover {
@@ -147,6 +156,8 @@ a.active {
     height: 160px; /* Adjusted thumbnail height */
     flex-shrink: 0;
     position: relative;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
+    border-radius: 20px;
 }
 
 .thumbnail .item img {
@@ -182,6 +193,7 @@ a.active {
     transition: 0.5s;
     cursor: pointer;
     padding: 0px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
 }
 
 .nextPrevArrows button:hover {

@@ -33,7 +33,7 @@ const RoleChart = () => {
   }, [chartData]);
   const createMultiLineChart = () => {
     const ctx = document.getElementById('myChart').getContext('2d')
-    const roleColors = ['#FF5733', '#33FF57', '#337AFF', '#33FFAB', '#FF33E9', '#FF9D33', '#8C33FF', '#FF3333', '#33FF9D', '#33D6FF']
+    const roleColors = ['#FF5733', '#33FF57', '#337AFF', '#33FFAB', '#FF33E9', '#FF9D33', '#8C33FF', '#FF3333', '#33D6FF']
 
     if(window.myChart instanceof Chart){
       window.myChart.destroy();

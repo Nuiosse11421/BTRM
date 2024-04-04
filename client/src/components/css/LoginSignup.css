@@ -12,8 +12,11 @@
     min-height: 500px;
     max-height: 100%;
     margin-left: 24%;
-    margin-top: 6%;
+    left: 25%;
+    margin-top: 23%;
+    transform: translate(-50%, -50%);/* Adjust this value to center layout */
 }
+
 .Container p{
     font-size: 14px;
     line-height: 20px;  

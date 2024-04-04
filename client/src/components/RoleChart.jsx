@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import NavBar from './NavBar';
-import { Line } from 'react-chartjs-2'
 import Chart from 'chart.js/auto'
 import { useGetUserID } from '../hook/useGetUserID';
 import axios from 'axios';
@@ -74,10 +73,13 @@ const RoleChart = () => {
   };
   if (!chartData || chartData.length === 0) {
     return (
+      <>
+      <NavBar/>
       <div>
 
-        <h1>Please Login to access the Chart Page.</h1>
+        <h1 className='nonLogin'>Please Login to access the Chart Page.</h1>
       </div>
+      </>
     );
   }
 

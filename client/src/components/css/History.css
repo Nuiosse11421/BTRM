@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+/* Wrap the content in a container div */
+.history-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.timestamp-title,
+.select-dropdown,
+.tableScore-container {
+    margin-top: 8%; /* Adjust the margin as needed */
+}
+
+.selecttime-section {
+    margin: 20px auto;
+    text-align: center;
+}
+
+.timestamp-title {
+    font-style: bold;
+    margin-bottom: 10px;
+    font-family: 'Fredoka';
+    color: #455181;
+    font-size: 30px;
+    position: relative;
+}
+
+.select-dropdown {
+    width: 220px;
+    padding: 7px;
+    margin-right: 10px;
+    font-size: 16px;
+    outline: none ;
+    background-color: #E5E0FF;
+    border: none;
+    border-radius: 10px;
+    margin-top: 1%;
+}
+
+.tableScore-container {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    width: 80%; /* Adjust the width as needed */
+    max-width: 1200px; /* Set a maximum width if necessary */
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+
+/* Add this CSS to set fixed width for each column */
+td[id^="a"],
+td[id^="b"],
+td[id^="c"],
+td[id^="d"],
+td[id^="e"],
+td[id^="f"],
+td[id^="g"],
+td[id^="h"],
+td[id^="i"] {
+    
+    width: 60px; /* Adjust the width as per your preference */
+    height: 40px;
+}
+
+/* Update existing CSS */
+table {
+    border-collapse: collapse;
+    width: auto; /* Change width to auto to allow table to expand based on column widths */
+    table-layout: fixed; /* Fixed layout so that the columns have equal width */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
+    border-radius: 20px;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    white-space: nowrap; /* Prevent wrapping of content */
+    overflow: hidden; /* Hide overflow content */
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+td {
+    background-color: #fff;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #7286D3;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #455181;
+}

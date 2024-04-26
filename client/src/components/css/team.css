@@ -1,0 +1,214 @@
+.team-page-container {
+  display: flex;
+  align-items: flex-start; /* Align items to the start of the flex container */
+  padding-top: 12%; /* Adjust as needed to leave space for the NavBar */
+}
+/* Styles for .radar-chart-container, .team-container, and .team-list-container */
+.radar-chart-container,
+.team-container,
+.team-list-container {
+  flex: 1; /* Take up equal remaining space */
+  margin: 20px; /* Adjust margin as needed */
+}
+/* Styles for .radar-chart-container */
+.radar-chart-container {
+  width: 650px;
+  height: 650px;
+  background-color: #FFF2F2;
+  border-radius: 30px;
+  display: block;
+  align-items: center;
+  box-sizing: border-box;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
+  margin-bottom: 20px;
+  position: absolute;
+  margin-left: 10%;
+  margin-top: -4%;
+  
+}
+
+.column-section {
+  display: flex;
+  align-items: flex-start; /* Align items to the start of the flex container */
+  flex: 1; /* Take up remaining space */
+  position: absolute;
+  margin-left: 55%;
+  
+}
+
+.team-container,
+.team-list-container {
+  flex: 1;
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 20px;
+  margin-left: 10px; /* Adjust margin as needed */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
+}
+
+
+/* Styles for .custom-button */
+.custom-button {
+  background-color: #7286D3;
+  color: white;
+  border: none;
+  font-size: 1.3em;
+  padding: 15px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-top: -4%;
+  position: absolute;
+  margin-left: 56%;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
+}
+
+.custom-button:hover {
+  background-color: #455181;
+}
+
+
+.team-container h2,
+.team-list-container h2 {
+  margin-bottom: 10px;
+}
+
+.team-list-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.team-list-container li {
+  margin-bottom: 10px;
+}
+
+.team-list-container button {
+  background-color: #7286D3;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.team-details-container {
+  background-color: #f0f0f0; 
+  border-radius: 20px; /* Adjust border-radius as needed */
+  padding: 20px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.team-details-container p {
+  margin-bottom: 10px;
+}
+
+.team-details-container ul {
+  list-style-type: none; 
+  padding: 0;
+}
+
+.team-details-container li {
+  margin-bottom: 5px; 
+}
+
+.team-details-container li:before {
+  content: "•"; 
+  margin-right: 5px; 
+}
+
+.team-details-container li:first-child {
+  margin-top: 10px; 
+}
+
+/* General styles for contact list */
+.list-contact {
+  margin-top: 20px;
+}
+
+.list-contact h3 {
+  font-size: 20px;
+  color: #333;
+}
+
+.contact-list-card-teampage {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #f9f9f9;
+}
+
+.contact-list-card-teampage ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.contact-list-card-teampage ul li {
+  margin-bottom: 5px;
+}
+
+.contact-list-card-teampage ul li.strong {
+  font-weight: bold;
+  color: #555;
+}
+
+.contact-list-card-teampage ul li.emaildetail {
+  color: #007bffa9; /* Blue color for email */
+}
+
+.contact-list-card-teampage ul li.genderdetail {
+  color: #b224b7; /* Green color for gender */
+}
+
+/* Modal styles */
+.modal {
+  display: block;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+}
+.modal-content button{
+  border-radius: 15px;
+}
+/*remove member*/
+.button-remove{
+  background-color: #ba1717;
+  margin-left: 10px;
+}
+.button-remove:hover {
+  background-color: #f21c1c;
+}
+/*add member*/
+.button-add{
+  background-color: #0e7516;
+  margin-left: 10px;
+}
+.button-add:hover {
+  background-color: #19af26;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}

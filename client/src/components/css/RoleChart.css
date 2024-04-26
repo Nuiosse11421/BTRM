@@ -1,0 +1,49 @@
+.role-score-chart {
+    font-family: 'Fredoka';
+    color: #455181;
+    font-size: 40px;
+    position: relative;
+    margin-top: 6%; /* Adjust this value to suit your layout */
+    margin-left: 0%;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+.role-chart {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin-top: 0%;
+    overflow: auto;
+    font-family: 'Fredoka';
+    background-color: #FFF2F2;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
+    position: relative;
+    top: 0px; /* Reset top value */
+    transform: translateY(30px); /* Adjust this value based on your layout */
+    width: 80%; /* Adjust the width as needed */
+    max-width: 1000px; /* Maximum width */
+    margin: 0 auto; /* Center the container horizontally */
+}
+
+.role-chart > div {
+    text-align: center; /* Center text inside the div */
+}
+
+.role-chart canvas {
+    width: 100%; /* Make the canvas fill the container */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 1000px; /* Increase the maximum width */
+    max-height: 600px; /* Increase the maximum height */
+}
+
+.nonLogin{
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    justify-content: center;
+    margin-top: 20%;
+}

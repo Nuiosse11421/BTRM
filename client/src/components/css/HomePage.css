@@ -1,0 +1,262 @@
+/* HomePage.css */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+/* Import RoleDescription.css */
+@import url('../css/RoleDescription.css');
+
+
+/*.home-container {
+    background-color: #000;
+    color: #eee;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 12px;
+    height: 450px;
+    width: 1000px;
+}*/
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+a.active {
+    background: #7286D3;
+    border-radius: 2px;
+}
+
+/* Slider Section */
+.slider {
+    top: 0%; /* Adjust top title */
+    height: 450px;
+    width: 1000px;
+    margin: auto; /* Center the slider horizontally */
+    overflow: hidden;
+    position: absolute; /* Change position to absolute */
+    bottom: 0; /* Position the slider at the bottom */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
+}
+/* Role Card Container */
+.role-card-container {
+    margin-top: 40%; /* Adjust margin top as needed */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjust role card width */
+    grid-gap: 20px; /* Adjust gap between role cards */
+    justify-content: center; /* Center align role cards horizontally */
+}
+/* Role Card Styling */
+.role-card-container .role-area {
+    width: 100%; /* Ensure role card takes full width */
+}
+
+.slider .list .item {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0 0 0 0;
+    transition: opacity 0.5s;
+    opacity: 0;
+}
+
+.slider .list .item.active {
+    opacity: 1;
+}
+
+.slider .list .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider .list .item .content {
+    position: absolute;
+    top: 10%; /* Adjust top title */
+    width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-right: 30%;
+    box-sizing: border-box;
+    color: #ffffff;
+    
+}
+
+.slider .list .item .content .title {
+    font-size: 5em;
+    font-weight: bold;
+    line-height: 1.3em;
+    text-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+}
+.slider .list .item .content .description{
+    font-size: 1.3em;
+    font-weight: bold;
+    line-height: 1.3em;
+    text-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Button Section */
+.slider .list .item .button{
+    font-size: 2em;
+    font-weight: bold;
+    line-height: 1.3em;
+    display: grid;
+    grid-template-columns: repeat(2, 60px);
+    grid-template-rows: 30px;
+    gap: 5px;
+    margin-top: 20px;
+    color: #fff;
+}
+
+.slider .list .item .button button {
+    width: 60px;/* size background button(link) */
+    height: 35px;
+    right: 10px;
+    border-radius: 10px;
+    background-color: #7285d377;
+    border: none;
+    color: #fff;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: bold;
+    transition: 0.5s;
+    cursor: pointer;
+    padding: 0px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
+    border-radius: 10px;
+}
+
+.slider .list .item .button button:hover {
+    background-color: #fff;
+    color: #000;
+    /*letter-spacing: 3px;*/
+}
+
+/*.slider .list .item .button button:nth-child(2) {
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #eee;
+}*/
+
+/* Thumbnail Section */
+.thumbnail {
+    position: absolute;
+    bottom: 30px;
+    left: 45%;
+    transform: translateX(-20%);
+    z-index: 100;
+    display: flex;
+    gap: 20px;
+}
+
+.thumbnail .item {
+    width: 120px; /* Adjusted thumbnail width */
+    height: 160px; /* Adjusted thumbnail height */
+    flex-shrink: 0;
+    position: relative;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
+    border-radius: 20px;
+}
+
+.thumbnail .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
+}
+
+/* nextPrevArrows Section */
+.nextPrevArrows {
+    position: absolute;
+    top: 80%;
+    right: 58%;
+    z-index: 100;
+    width: 300px;
+    max-width: 30%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.nextPrevArrows button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #7285d377;
+    border: none;
+    color: #fff;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: bold;
+    transition: 0.5s;
+    cursor: pointer;
+    padding: 0px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
+}
+
+.nextPrevArrows button:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+/* Animation Part */
+@keyframes showContent {
+    to {
+        transform: translateY(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes showImage {
+    to {
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+}
+
+@keyframes showThumbnail {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes effectNext {
+    from {
+        transform: translateX(150px);
+    }
+}
+
+@keyframes outFrame {
+    to {
+        width: 150px;
+        height: 220px;
+        bottom: 50px;
+        left: 50%;
+        border-radius: 20px;
+    }
+}
+
+@keyframes contentOut {
+    to {
+        transform: translateY(-150px);
+        filter: blur(20px);
+        opacity: 0;
+    }
+}
+
+@media screen and (max-width: 678px) {
+    .slider .list .item .content {
+        padding-right: 0;
+    }
+    .slider .list .item .content .title {
+        font-size: 50px;
+    }
+}
+

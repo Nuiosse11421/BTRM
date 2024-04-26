@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
+
+.header-container {
+  background-color: #7286D3;
+  padding: 0px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000; /* Ensure the header is on top of other content */
+}
+
+.logo {
+  width: 80px;
+  cursor: pointer;
+  margin-left: 40px;
+}
+
+.nav-menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav-menu a:hover {
+  background: #4e66c6;
+  border-radius: 10px;
+}
+
+.nav-menu li {
+  margin-right: 20px;
+}
+
+.nav-menu li:last-child {
+  margin-right: 0;
+}
+
+.nav-menu li a {
+  color: #e5e0ff;
+  text-decoration: none;
+  padding: 5px;
+  transition: color 0.3s ease;
+}
+
+.nav-menu li a:hover {
+  color: #fff;
+}
+
+.login,
+.login button {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.login li {
+  margin-right: 20px;
+}
+
+.login li:last-child {
+  margin-right: 40px;
+}
+
+.login li a,
+.login button {
+  color: #e5e0ff;
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  transition: color 0.3s ease;
+}
+
+.login li a:hover,
+.login button:hover {
+  color: #fff;
+}
+
+.login a:hover,
+.login button:hover {
+  background: #4e66c6;
+  border-radius: 10px;
+}

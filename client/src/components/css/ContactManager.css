@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
+
+.contact-container {
+    font-family: 'Fredoka';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.app-container {
+    position: relative;
+    background-color: #FFF2F2;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    width: 100%; /* Adjusted width */
+    max-width: 900px; /* Adjusted max-width */
+    min-height: 500px;
+    max-height: 100%;
+    padding: 30px; /* Adjusted padding */
+    margin: 0 auto;
+    right: 15%;
+    margin-top: 8.5%;
+}
+
+
+.add-contact h2 {
+    margin: 0;
+    position: absolute;
+    color: #7286D3;
+    text-shadow: 0 10px 10px #E5E0FF;
+    font-size: 40px;
+    text-align: center;
+    top: 3%;
+}
+
+.app-container p{
+    top: 30%;
+    font-size: 12px;
+    text-align: justify;
+    position: absolute;
+    top: 15%;
+}
+
+.add-contact {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.add-contact input{
+    background-color: #E5E0FF;
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    position: absolute;
+    top: 20%;
+}
+
+.add-contact button{
+    border: none;
+    width: 50px;
+    height: 30px;
+    border-radius: 10px;
+    margin-left: 220px;
+    background-color: #7286D3;
+    outline: none;
+    cursor: pointer;
+    position: absolute;
+    top: 17.7%;
+}
+
+button:hover{
+    background-color: #8EA7E9;
+}
+
+.contact-list h3{
+    color: #7286D3;
+    text-shadow: 0 10px 10px #E5E0FF;
+    margin-bottom: 10px;
+    position: absolute;
+    top: 30%;
+}
+
+/* ContactList.css */ 
+.contact-list-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* แสดงเป็น 3 columns */
+    gap: 15px;
+    padding: 20px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    overflow-y: auto; /* เพิ่มการเลื่อน scroll ด้านข้าง */
+    overflow-x: hidden; /* ไม่ให้มีการเลื่อน scroll ด้านล่าง */
+    height: 300px;
+    max-height: 864px;
+    margin: 0 auto;
+    top: 35%;
+    
+}
+
+.card {
+    background-color: #E5E0FF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: calc(100% - 20px); /* ไม่เกินขอบเขตของ .contact-list-details */
+    margin: 0 10px 10px 0;
+    width: 300px;
+    height: 170px;
+}
+
+.profile-picture{
+    margin: 0;
+    padding: 0;
+    font-size: 80px;
+    
+}
+.contact-details-group {
+    text-align: left;
+    margin-top: -60px;    
+}
+.contact-details-group li {
+    margin: 0;
+    padding: 0;
+    font-size: 10.5px;
+    list-style-type:none ;
+    width: 100%;
+    padding-left: 95px;
+}
+
+.card-actions {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.btn-custom {
+    justify-content: flex-end;
+    display: flex;
+    padding: 5px 10px;
+    background-color: #0e7516;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btn-custom:hover {
+    background-color: #19af26;
+}
+
+/* ContactList.css */ 
+.list-contacts {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 500px;
+    max-height: 864px;
+    margin: 0 auto;
+    top: 20%; /* Adjust the top position as needed */
+    left: 70%;
+}
+/*.list-contacts h3 {
+    color: #000000;
+    text-shadow: 0 10px 10px #E5E0FF;
+    margin-bottom: 10px;
+    position: absolute;
+    top: -30px; /* Position the h3 element above the .list-contacts *//*
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+} */
+
+.contact-list-card-contactpage {
+    background-color: #E5E0FF;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: calc(100% - 20px);
+    margin: 0 10px 10px 0;
+    width: 300px;
+}
+
+.contact-list-card-contactpage ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.contact-list-card-contactpage ul li {
+    margin: 5px 0;
+}
+
+.remove-contact {
+    background-color: #ba1717;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.remove-contact:hover {
+    background-color: #f21c1c;
+}
